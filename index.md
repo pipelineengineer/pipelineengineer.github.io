@@ -19,8 +19,8 @@ feature_row:
     alt: "Getting Started"
     title: "Getting Started"
     excerpt: "Find out how you can begin using Pipeline Engineer to speed up your work flows."
-    url: "'/getting_started/'"
-    btn_label: "View Repo"
+    url: "/getting_started/"
+    btn_label: "Learn More"
     btn_class: "btn--primary"
 
   - image_path: /media/images/interface.png

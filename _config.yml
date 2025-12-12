@@ -12,12 +12,3 @@ description: A Data Driven Approach to Pipeline Projects
 # (optional) Base URL — leave blank if this is a user page
 baseurl: ""
 url: "https://pipelineengineer.github.io"
-
-# Optional defaults (if you want a blog)
-defaults:
-  - scope:
-      path: ""
-      type: "posts"
-    values:
-      layout: "single"
-      author_profile: true

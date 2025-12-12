@@ -1,10 +1,10 @@
 ---
-title: An Example Work Flow
+title: Features
 layout: single
 permalink: /features/
 ---
 
-Let's go through an example work flow to explore the capabilities of the Pipeline Engineer Plugin.
+Let's go some of the features Pipeline Engineer currently has to offer.
 
 ## Network Cleanup
 

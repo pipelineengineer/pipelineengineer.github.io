@@ -7,3 +7,5 @@ remote_theme: "mmistakes/minimal-mistakes"
 # recommended
 plugins:
   - jekyll-include-cache
+
+include: ["_pages"]

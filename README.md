@@ -1,6 +1,6 @@
 # Pipeline Engineer
 
-# A Data Driven Approach to Pipeline Projects
+A Data Driven Approach to Pipeline Projects
 
 ### Features
 

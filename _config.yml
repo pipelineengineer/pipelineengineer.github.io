@@ -1,3 +1,9 @@
 title: Pipeline Engineer
 show_downloads: true
-theme: jekyll-theme-primer
+
+theme: null
+remote_theme: "mmistakes/minimal-mistakes"
+
+# recommended
+plugins:
+  - jekyll-include-cache

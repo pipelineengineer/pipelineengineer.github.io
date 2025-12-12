@@ -11,7 +11,7 @@ feature_row:
     alt: "Features"
     title: "Features"
     excerpt: "Explore some of the features Pipeline Engineer has available."
-    url: "/about/"
+    url: "/features/"
     btn_label: "Learn More"
     btn_class: "btn--primary"
 
@@ -19,7 +19,7 @@ feature_row:
     alt: "Getting Started"
     title: "Getting Started"
     excerpt: "Find out how you can begin using Pipeline Engineer to speed up your work flows."
-    url: "https://github.com/pipelineengineer/pipelineengineer.github.io"
+    url: "'/getting_started/'"
     btn_label: "View Repo"
     btn_class: "btn--primary"
 
@@ -36,12 +36,8 @@ feature_row:
 
 Pipeline Engineer is a [QGIS](https://qgis.org/) Plugin that aims to speed up engineering work flows on pipeline projects.
 
-Currently, Pipeline Engineer can help with fixing network topology, abstracting and simulating different flow models and generating Bills of Materials.
-
-
+Currently, Pipeline Engineer can help with fixing network topology, abstracting and simulating different flow models and generating Bills of Material.
 
 ---
 
 {% include feature_row %}
-
-

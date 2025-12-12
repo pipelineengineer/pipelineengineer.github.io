@@ -2,6 +2,8 @@
 title: Features
 layout: single
 permalink: /features/
+toc: true
+
 ---
 
 Let's go some of the features Pipeline Engineer currently has to offer.

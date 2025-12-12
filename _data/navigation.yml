@@ -7,4 +7,7 @@ main:
     url: /features/
   - title: "Blog"
     url: /blog/
-
+  - title: "Repository"
+    url: https://github.com/pipelineengineer/pipelineEngineerPlugin
+  - title: "Contact"
+    url: /contact/

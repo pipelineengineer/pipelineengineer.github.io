@@ -1,11 +1,23 @@
-title: Pipeline Engineer
-show_downloads: true
-
-theme: null
+# Required
 remote_theme: "mmistakes/minimal-mistakes"
 
-# recommended
+# Required plugin for the theme
 plugins:
   - jekyll-include-cache
 
-include: ["_pages"]
+# Your site settings
+title: Pipeline Engineer
+description: A Data Driven Approach to Pipeline Projects
+
+# (optional) Base URL — leave blank if this is a user page
+baseurl: ""
+url: "https://pipelineengineer.github.io"
+
+# Optional defaults (if you want a blog)
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "single"
+      author_profile: true

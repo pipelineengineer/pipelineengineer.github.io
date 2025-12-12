@@ -1,0 +1,288 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.27.3 by Michael Rose
+  Copyright 2013-2025 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>An Example Work Flow - Pipeline Engineer</title>
+<meta name="description" content="A Data Driven Approach to Pipeline Projects">
+
+
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Pipeline Engineer">
+<meta property="og:title" content="An Example Work Flow">
+<meta property="og:url" content="http://localhost:4000/features/">
+
+
+  <meta property="og:description" content="A Data Driven Approach to Pipeline Projects">
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/features/">
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Pipeline Engineer Feed">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+  
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single" dir="ltr">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Pipeline Engineer
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a
+                href="/"
+                
+                
+              >Home</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/getting_started/"
+                
+                
+              >Getting Started</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/features/"
+                
+                
+              >Features</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/blog/"
+                
+                
+              >Blog</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+<div id="main" role="main">
+  
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="An Example Work Flow">
+    
+    
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">
+            <a href="http://localhost:4000/features/" itemprop="url">An Example Work Flow
+</a>
+          </h1>
+          
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <p>Let’s go through an example work flow to explore the capabilities of the Pipeline Engineer Plugin.</p>
+
+<h2 id="network-cleanup">Network Cleanup</h2>
+
+<p>Among the everchanging landscape that is a pipeline network project, one factor that often gets left to the wayside is topographical consistency. Let’s take a look at some of the Network Cleanup tools Pipeline Engineer has to help with this.</p>
+
+<h4 id="disjoint-check">Disjoint Check</h4>
+
+<p><img src="/media/disjoint_check.gif" alt="Disjoint Check" /></p>
+
+<p>The Disjoint Check function works from a selected line (or a randomly chosen one) and slowly working outwards until every connected line within the network is selected.</p>
+
+<h4 id="recursive-selection">Recursive Selection</h4>
+
+<p>Similar to Disjoint Check, Recursive Selection also selects lines that are connected to eachother. Unlike Disjoint Check, Recursive Selection will stop when lines that that don’t end where the selected line(s) start.</p>
+
+<h4 id="loop-checker">Loop Checker</h4>
+
+<p>Even after Disjoint Check and Recursive Selection select every line in a layer, the network topology may not be fully rectified. Loops throw a spanner in the works, as they can be connected from more than one point, making it easy for network holes to go unnoticed.</p>
+
+<p>Pipeline Engineer helps overcome this by extracting the loops identified, dissolving them and splitting them. Each section of this layer should be a continuous and smooth line - if they’re not, there may be an unnoticed hole in the network.</p>
+
+<p><img src="/media/loop_check.gif" alt="Loop Check" /></p>
+
+<p>…SNEAKY!!!</p>
+
+<h3 id="hydraulic-modelling">Hydraulic Modelling</h3>
+
+<p>Once network topology has been rectified, the rest is easy (… sort of)!!!</p>
+
+<p>Pipeline Engineer leverages the high automation factor of the pandapipes fluid modelling engine to create highly configurable and visual networks of pipe networks from GIS layers.</p>
+
+<p>The attribute table of GIS data serves as the primary communicator between GIS Data and the pandapipes engine.</p>
+
+<p>Component information is kept in the attribute table of a GIS layer, allowing for quick adjustments to be made to the model with new results generated rapidly.</p>
+
+<h4 id="model-abstraction">Model Abstraction</h4>
+
+<p>In a typical workflow, building a model of a network can be quite a labourious task.</p>
+
+<p><img src="/media/model_abstraction.gif" alt="Model Abstraction" /></p>
+
+<p>With the Network Component Window, a pandapipes model of an existing network can quickly be abstracted from a network:</p>
+
+<h4 id="running-a-pipeflow">Running a Pipeflow</h4>
+
+<p>With the model abstracted, Pipeline Engineer can now run a Pipeflow. Several modes can be run, modelling both temperature and pressure. The model pictured below used the ‘Hydraulics’ mode, which models pressure exclusively.</p>
+
+<p><img src="/media/pandapipes_example.gif" alt="Loop Check" /></p>
+
+<h4 id="material-takeoff">Material Takeoff</h4>
+
+<p>With the network modeled and line sizes and specs locked in, the Material Takeoff suite of tools can be used to get quick summaries of all the Bends, Tees and Four-Way Unions within your pipe network.</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+
+      </footer>
+
+      
+
+      
+
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+      
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        
+
+<div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+
+<div class="page__footer-copyright">&copy; 2025 <a href="http://localhost:4000">Pipeline Engineer</a>. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/jekyll-themes/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

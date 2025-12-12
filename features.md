@@ -1,16 +1,20 @@
-## Features
+---
+title: An Example Work Flow
+layout: single
+permalink: /features/
+---
 
+Let's go through an example work flow to explore the capabilities of the Pipeline Engineer Plugin.
 
+## Network Cleanup
 
-### Network Cleanup
-
-Network cleanup is where it all starts. Among the everchanging landscape that is a pipeline network project, one factor that often gets left to the wayside is topographical consistency in a network. Pipeline Engineer's solution to this problem is a collection of Network Cleanup Tools.
+Among the everchanging landscape that is a pipeline network project, one factor that often gets left to the wayside is topographical consistency. Let's take a look at some of the Network Cleanup tools Pipeline Engineer has to help with this.
 
 #### Disjoint Check
 
 ![Disjoint Check](/media/disjoint_check.gif)
 
-Why not start things off with the Disjoint Check function? Disjoint Check works from a selected line (or a randomly chosen one) and slowly working outwards until every connected line within the network is selected.
+The Disjoint Check function works from a selected line (or a randomly chosen one) and slowly working outwards until every connected line within the network is selected.
 
 #### Recursive Selection
 
@@ -57,9 +61,4 @@ With the model abstracted, Pipeline Engineer can now run a Pipeflow. Several mod
 
 #### Material Takeoff
 
-
 With the network modeled and line sizes and specs locked in, the Material Takeoff suite of tools can be used to get quick summaries of all the Bends, Tees and Four-Way Unions within your pipe network.
-
-
-### Documentation
-

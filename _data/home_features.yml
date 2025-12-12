@@ -1,0 +1,14 @@
+- image_path: /media/interface.png
+  title: "Network Cleanup"
+  text: "Ensure your pipeline networks are clean and connected."
+  url: /features
+
+- image_path: /media/example.png
+  title: "Hydraulic Modelling"
+  text: "Run powerful hydraulic analyses with pandapipes."
+  url: /features
+
+- image_path: /media/tas_grid.png
+  title: "Material Takeoff"
+  text: "Quick summaries of fittings and components."
+  url: /features

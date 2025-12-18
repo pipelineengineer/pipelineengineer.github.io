@@ -3,7 +3,7 @@ title: Getting Started
 layout: single
 permalink: /getting_started/
 ---
-Pipeline Engineer can currently be downloaded from the [repository](github.com/pipelineengineer/pipelineEngineerPlugin) and placed into your QGIS plugin folder (usually C:\Users\username\AppData\Roaming\QGIS\QGIS3\profiles\default\python\plugins).
+Pipeline Engineer can currently be downloaded from the [repository](https://github.com/pipelineengineer/pipelineEngineerPlugin) and placed into your QGIS plugin folder (usually C:\Users\username\AppData\Roaming\QGIS\QGIS3\profiles\default\python\plugins).
 
 Right from installation, you will have access to many different functionalities Pipeline Engineer has to offer.
 

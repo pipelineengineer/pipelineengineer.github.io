@@ -6,7 +6,7 @@ toc: true
 
 ---
 
-Let's go some of the features Pipeline Engineer currently has to offer.
+Let's go through some of the features Pipeline Engineer currently has to offer.
 
 ## Network Cleanup
 
@@ -20,7 +20,7 @@ The Disjoint Check function works from a selected line (or a randomly chosen one
 
 #### Recursive Selection
 
-Similar to Disjoint Check, Recursive Selection also selects lines that are connected to eachother. Unlike Disjoint Check, Recursive Selection will stop when lines that that don't end where the selected line(s) start.
+Similar to Disjoint Check, Recursive Selection also selects lines that are connected to eachother. Unlike Disjoint Check, Recursive Selection will stop when lines that don't end where the selected line(s) start.
 
 #### Loop Checker
 

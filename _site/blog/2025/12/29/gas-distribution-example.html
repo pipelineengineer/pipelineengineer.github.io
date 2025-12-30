@@ -1,0 +1,462 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.27.3 by Michael Rose
+  Copyright 2013-2025 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Gas Distribution Network Example - Pipeline Engineer</title>
+<meta name="description" content="Today we will set up a model of a gas distribution network.">
+
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Pipeline Engineer">
+<meta property="og:title" content="Gas Distribution Network Example">
+<meta property="og:url" content="http://localhost:4000/blog/2025/12/29/gas-distribution-example.html">
+
+
+  <meta property="og:description" content="Today we will set up a model of a gas distribution network.">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2025-12-29T00:00:00+10:00">
+
+
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/blog/2025/12/29/gas-distribution-example.html">
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Pipeline Engineer Feed">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+  
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single" dir="ltr">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Pipeline Engineer
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a
+                href="/"
+                
+                
+              >Home</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/getting_started/"
+                
+                
+              >Getting Started</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/features/"
+                
+                
+              >Features</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/blog/"
+                
+                
+              >Blog</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="https://github.com/pipelineengineer/pipelineEngineerPlugin"
+                
+                
+              >Repository</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/contact/"
+                
+                
+              >Contact</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+<div id="main" role="main">
+  
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Gas Distribution Network Example">
+    <meta itemprop="description" content="Today we will set up a model of a gas distribution network.">
+    <meta itemprop="datePublished" content="2025-12-29T00:00:00+10:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">
+            <a href="http://localhost:4000/blog/2025/12/29/gas-distribution-example.html" itemprop="url">Gas Distribution Network Example
+</a>
+          </h1>
+          
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right ">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
+              <ul class="toc__menu"><li><a href="#network-cleanup">Network Cleanup</a></li><li><a href="#model-setup">Model Setup</a><ul><li><a href="#junctions">Junctions</a></li><li><a href="#pipes">Pipes</a></li><li><a href="#sinks">Sinks</a></li><li><a href="#grid-connections">Grid Connections</a></li></ul></li><li><a href="#using-the-model">Using the Model</a><ul><li><a href="#pipeflow">Pipeflow</a></li><li><a href="#time-series">Time Series</a></li></ul></li><li><a href="#conclusion">Conclusion</a></li></ul>
+            </nav>
+          </aside>
+        
+        <p>Today we will set up a model of a gas distribution network.</p>
+
+<p><img src="/media/2025-12-29-gas-distribution-example/full_model.png" alt="Full Model" /></p>
+
+<p>Modelling a pipe network is generally a considered a worthwhile exercise. Pre-construction, the design of the network can be optimised while during service, models can help operators work proactively rather than reactively.</p>
+
+<p>Today’s example is based on a section of a <a href="https://northerngasopendataportal.co.uk/dataset/20">dataset from Northern Gas Networks</a>.</p>
+
+<p>We will abstract a hydraulic model and go through some techniques we can use to validate it.</p>
+
+<p>Resources produced and used in this exercise can be downloaded from <a href="https://github.com/pipelineengineer/examples/tree/d797b431f4e41f0187f6847c54470dbad2ed5754/2025-12-29-gas-distribution-example">here</a>.</p>
+
+<p>As always, the process began by cleaning up the data for the area chosen.</p>
+
+<h2 id="network-cleanup">Network Cleanup</h2>
+
+<p>From initially playing around with this dataset, the lines did not split at each intersection.</p>
+
+<p><img src="/media/2025-12-29-gas-distribution-example/unsplit_lines.png" alt="Junction Layer Creation" /></p>
+
+<p>To fix this, the “Split With Lines” Algorithm from the processing toolbox was run.</p>
+
+<p>Following this, the network was iteratively cleaned up using the <a href="https://pipelineengineer.github.io/features/#disjoint-check">disjoint</a> and <a href="https://pipelineengineer.github.io/features/#loop-checker">loop</a> checking algorithms from the Pipeline Engineer plugin.</p>
+
+<p><img src="/media/2025-12-29-gas-distribution-example/disjoint_check.gif" alt="Disjoint Check" /></p>
+
+<p><img src="/media/2025-12-29-gas-distribution-example/loop_check.gif" alt="Loop Check" /></p>
+
+<p>Once cleaned up, the model was ready to be built!</p>
+
+<h2 id="model-setup">Model Setup</h2>
+
+<p>In order to successfully model something, we require three things:- known variables, unknown variables and a relationship between them.</p>
+
+<p>For a typical pipe network problem, the variables we’re trying to solve for are pressure and flow rates.</p>
+
+<p>At various nodes throughout the network, either the pressure, flowrate, both or neither will be known.</p>
+
+<p>The relationship between each node is derived from the pipes connecting them.</p>
+
+<p>Using this, we can solve for the unknowns and have a fully capable model.</p>
+
+<h3 id="junctions">Junctions</h3>
+<p>With our network cleaned up, we can use the model abstract the junctions from the network using Pipeline Engineer’s Network Component tool, accesible from the drop down menu.</p>
+
+<p><img src="/media/2025-12-29-gas-distribution-example/component_dialog.png" alt="Component Dialog" /></p>
+
+<p>We will select our newly cleaned alignments and adapt the layer to create junctions.</p>
+
+<p>The attributes we’ve included for this model are p_bar, tfluid_k and name. For gases, it’s generally okay to neglect height as due to the low density, height differences don’t impact the hydraulics. If we were looking at a liquid service however, it’s highly reccomended that height is included in the model (an example we may cover in future).</p>
+
+<p><img src="/media/2025-12-29-gas-distribution-example/create_junction_layer.png" alt="Junction Layer Creation" /></p>
+
+<p>p_bar and tfluid_k represent the initial pressure in bar and the initial temperature in Kelvin at each node respectively. Pandapipes relies on the <a href="https://pandapipes.readthedocs.io/en/latest/pipeflow/pipeflow_procedure.html">Newton Raphson Method</a> to solve for the uknown variables in a pipe network, which essentially means it takes a starting value and keeps trying to find values that meet all the necessary conditions. If we were running a bidirectional or a sequential <a href="https://pandapipes.readthedocs.io/en/latest/pipeflow.html">pipeflow</a>, temperature would be solved for also, however, for this example, we’re running a hydraulics pipeflow, which only accounts for pressure.</p>
+
+<h3 id="pipes">Pipes</h3>
+<p>With our junctions now abstracted, we can now create our pipe layer.</p>
+
+<p>The attributes we’ll include on our pipe layer are the following:-</p>
+<ul>
+  <li>from_junction - the junction where the pipe starts</li>
+  <li>to_junction - the junction where the pipe ends</li>
+  <li>length_km - the length of the pipe section in km</li>
+  <li>k_mm - the <a href="https://en.wikipedia.org/wiki/Surface_roughness">surface roughness</a> of the pipe</li>
+  <li>in_service - this determines whether the line can be used in the model or not</li>
+  <li>name - a unique identifier for each pipe - I added these to this network by pasting the following formula into the field calculator in QGIS:-
+    <div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">CONCAT</span><span class="p">(</span><span class="s1">'LINE_'</span><span class="p">,</span><span class="n">LPAD</span><span class="p">(</span><span class="err">$</span><span class="n">id</span><span class="o">+</span><span class="mi">10000</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="s1">'00000'</span><span class="p">))</span>
+</code></pre></div>    </div>
+    <p>I then set the “Layer ID Field” dropdown in the create network component widget to the newly created field.</p>
+  </li>
+</ul>
+
+<p>Additionally, from the layer, I kept the ‘MATERIAL’, ‘DIAMETER’ and ‘SDR’ fields, as these will help us fill out some of the fields required for this model.</p>
+
+<p>We can calculate the internal diameter of each polyethylene or PE pipe using the following formula in the QGIS field calculator:-</p>
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="nv">"DIAMETER"</span> <span class="o">-</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="nv">"DIAMETER"</span><span class="o">/</span><span class="nv">"SDR"</span><span class="p">)))</span><span class="o">/</span><span class="mi">1000</span>
+</code></pre></div></div>
+<p>For the one steel line in this network, a quick google search reveals that the internal diameter of a Class 150# with a Nominal Pipe Size of DN150 is 0.1583m.</p>
+
+<p>The pipe roughness for the PE and Steel pipe is set as 0.007mm and 0.045mm respectively.</p>
+
+<p>Before hitting the “Adapt Existing Layer” button, ensure the Junction Layer is selected under the “Select Junction Layer” dropdown.</p>
+
+<p><img src="/media/2025-12-29-gas-distribution-example/create_pipe_layer.png" alt="Pipe Layer Creation" /></p>
+
+<p>Once all is said and done, this layer is good to go!</p>
+
+<h3 id="sinks">Sinks</h3>
+
+<p>For a pipe networks, flow rates will typically be known at sources or sinks - places we’re we’re trying to move fluid from or to.</p>
+
+<p>Sinks for this network are points where connections are made between the network and expected users.</p>
+
+<p>I’ve chosen these points on our network from a quick visual inspection.</p>
+
+<p><img src="/media/2025-12-29-gas-distribution-example/house_connections.png" alt="House Connection" /></p>
+
+<p>We will represent these in our model using a pandapipes sink.</p>
+
+<p>We will use the following parameters in our sink:-</p>
+<ul>
+  <li>junction - the junction in the network that the sink is connected to</li>
+  <li>mdot_kg_per_s - the flow rate we’re expecting the sink will require (for starters, I’m just going to set this as 0.02kg/s)</li>
+  <li>name - the name of the sink</li>
+</ul>
+
+<h3 id="grid-connections">Grid Connections</h3>
+
+<p>Pressures will typically be known at points where our network connects to a larger high pressure grid.</p>
+
+<p>From a quick look at the map, we can immediately see that there seem to be two points where the polyethylene network is connected to a steel line.</p>
+
+<p><img src="/media/2025-12-29-gas-distribution-example/steel_connections.png" alt="Steel Connection" /></p>
+
+<p>From the Google Street View at these locations, we can identify similar infrastructure at these two points.</p>
+
+<p><img src="/media/2025-12-29-gas-distribution-example/stonehouse_pres.png" alt="Infrastructure at Point A" /></p>
+
+<p><img src="/media/2025-12-29-gas-distribution-example/matty_lonning_pres.png" alt="Infrastructure at Point B" /></p>
+
+<p>This infers that the two above points contain some form of pressure regulating equipment.</p>
+
+<p>As such, we will identify these as our pressure boundaries.</p>
+
+<p>These will be represented by an external grid in pandapipes.</p>
+
+<p>We will include the following parameters:-</p>
+<ul>
+  <li>junction - the junction the grid is connected to</li>
+  <li>p_bar - the pressure at the node</li>
+  <li>t_k - the temperature at the node</li>
+  <li>name - the name of the grid connection</li>
+  <li>in_service - whether the grid is in service or not.</li>
+</ul>
+
+<p>With the grid being the final piece of the puzzle, our network is now fully constructed.</p>
+
+<p>With a full model of the network, we can now solve for the unknowns we’re after.</p>
+
+<p><img src="/media/2025-12-29-gas-distribution-example/full_model.png" alt="Full Model" /></p>
+
+<h2 id="using-the-model">Using the Model</h2>
+
+<h3 id="pipeflow">Pipeflow</h3>
+
+<p>With a fully set up model, one of the things we can now do to check that it works is run a pipeflow.</p>
+
+<p><img src="/media/2025-12-29-gas-distribution-example/run_pipeflow.png" alt="Full Model" /></p>
+
+<p>All settings have been kept as default, the fluid has been set as methane and the mode hydraulics.</p>
+
+<p><img src="/media/2025-12-29-gas-distribution-example/pipeflow_results.png" alt="Pipe Flow" /></p>
+
+<p>From a quick visual inpsection of the model, everything seems to be in order, meaning that we can move onto the next step.</p>
+
+<h3 id="time-series">Time Series</h3>
+
+<p>One way we can quickly gain confidence that the model that’s been built is useful is by comparing the outputs to recorded data. Evidently the more data we can compare the model with, the more confident we can be in the model.</p>
+
+<p>For this network, while we do not have any actual data to benchmark the model with, I will show you how you can return results for a large set of data in order to validate the model created.</p>
+
+<p>Included in the resources for this week’s example are two csv files containing varying pressure data and varying flow rate data over a time period.</p>
+
+<p>You can add these to your QGIS session like so:-</p>
+
+<p><img src="/media/2025-12-29-gas-distribution-example/delimited_text.png" alt="Add Delimited Text" />
+<img src="/media/2025-12-29-gas-distribution-example/add_csv.png" alt="Add Delimited Text Interface" /></p>
+
+<p>Before the next step, it’s useful to have an excel writer installed in your QGIS environment. You can install excelwriter using the following command in the OSGeo4W shell to ensure this.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install </span>excelwriter
+</code></pre></div></div>
+
+<p>Having the above step complete is not a complete show-stopper, however if done, this will compile all the results from this function into one Excel Workbook.</p>
+
+<p>Once done, you can select the network as before on the pipeflow tab and fill out the time series sheet with the following settings.</p>
+
+<p><img src="/media/2025-12-29-gas-distribution-example/time_series_settings.png" alt="Time Series Settings" /></p>
+
+<p>After this is complete you will have the following:-</p>
+<ul>
+  <li>Geopackages of the results of every scenario</li>
+  <li>Results for all the components compiled into seperate CSVs</li>
+  <li>(If excelwriter is installed) all the CSVs compiled into an Excel workbook</li>
+</ul>
+
+<p>This data can then be easily compared with field recorded data in order to compare the model with field data.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>In today’s example, we went from a bunch a GIS dataset to a model of a gas distribution network that we can easily benchmark with real data.</p>
+
+<p>If anything was unclear or you wish to learn more, please don’t hesitate to send me an email at lemungineer@gmail.com.</p>
+
+<p>Thank you for reading and I’ll catch you in the next one!</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2025-12-29T00:00:00+10:00">December 29, 2025</time></p>
+
+      </footer>
+
+      
+
+      
+  <nav class="pagination">
+    
+      <a href="/blog/2025/12/13/first-post.html" class="pagination--pager" title="Introduction">Previous</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Next</a>
+    
+  </nav>
+
+
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+      
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        
+
+<div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+
+<div class="page__footer-copyright">&copy; 2025 <a href="http://localhost:4000">Pipeline Engineer</a>. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/jekyll-themes/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

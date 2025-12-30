@@ -3,7 +3,7 @@ title: "Introduction"
 date: 2025-12-13
 layout: single
 categories: blog
-author: Your Name
+author: Thomas Raj
 ---
 Welcome to the first post on the Pipeline Engineer blog!
 

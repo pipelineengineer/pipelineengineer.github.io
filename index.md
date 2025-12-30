@@ -36,8 +36,6 @@ feature_row:
 
 Pipeline Engineer is a [QGIS](https://qgis.org/) Plugin that aims to speed up engineering work flows on pipeline projects.
 
-Currently, Pipeline Engineer can help with fixing network topology, abstracting and simulating different flow models and generating Bills of Material.
-
 ---
 
 {% include feature_row %}

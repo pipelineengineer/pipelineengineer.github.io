@@ -190,7 +190,7 @@ This data can then be easily compared with field recorded data in order to compa
 
 ## Conclusion
 
-In today's example, we went from a bunch a GIS dataset to a model of a gas distribution network that we can easily benchmark with real data.
+In today's example, we went from a GIS dataset to a model of a gas distribution network that we can easily benchmark with real data.
 
 If anything was unclear or you wish to learn more, please don't hesitate to send me an email at lemungineer@gmail.com.
 

@@ -8,6 +8,6 @@ main:
   - title: "Blog"
     url: /blog/
   - title: "Repository"
-    url: https://github.com/pipelineengineer/pipelineEngineerPlugin
+    url: https://github.com/pipelineengineer/pipelineEngineer
   - title: "Contact"
     url: /contact/

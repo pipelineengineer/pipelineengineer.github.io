@@ -1,0 +1,446 @@
+
+
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.28.0 by Michael Rose
+  Copyright 2013-2026 Michael Rose - mademistakes.com | @mmistakes
+  Copyright 2024-2026 iBug - ibugone.com | @iBug
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+
+<html lang="en" class="no-js">
+  <head>
+    
+<meta charset="utf-8">
+
+
+<!-- begin _includes/seo.html --><title>Network Cleanup - Pipeline Engineer</title>
+<meta name="description" content="A Data Driven Approach to Pipeline Projects">
+
+
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Pipeline Engineer">
+<meta property="og:title" content="Network Cleanup">
+<meta property="og:url" content="http://localhost:4000/network_cleanup/">
+
+
+  <meta property="og:description" content="A Data Driven Approach to Pipeline Projects">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/network_cleanup/">
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Pipeline Engineer Feed">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+  
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single" dir="ltr">
+    
+<nav class="skip-links" aria-label="Skip links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav" aria-label="Primary navigation">
+        
+        <a class="site-title" href="/">
+          Pipeline Engineer
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a
+                href="/"
+                
+                
+              >Home</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/about/"
+                
+                
+              >About</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/getting_started/"
+                
+                
+              >Getting Started</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/features/"
+                
+                
+              >Features</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/blog/"
+                
+                
+              >Blog</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/contact/"
+                
+                
+              >Contact</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+
+
+<div id="main" role="main">
+  
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Network Cleanup">
+    
+    
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/network_cleanup/" itemprop="url">Network Cleanup
+</a>
+          </h1>
+          
+
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right ">
+            <nav class="toc" aria-label="Table of contents">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
+              <ul class="toc__menu"><li><a href="#1---disjoint-check">1 - Disjoint Check</a><ul><li><a href="#11-parameters">1.1 Parameters</a></li><li><a href="#12-python-code">1.2 Python Code</a></li></ul></li><li><a href="#2---recursive-selection">2 - Recursive Selection</a><ul><li><a href="#21-parameters">2.1 Parameters</a></li><li><a href="#22-python-code">2.2 Python Code</a></li></ul></li><li><a href="#3---loop-check">3 - Loop Check</a><ul><li><a href="#31-parameters">3.1 Parameters</a></li><li><a href="#32-outputs">3.2 Outputs</a></li><li><a href="#33-python-code">3.3 Python Code</a></li></ul></li><li><a href="#4---merge-selected-features-layers">4 - Merge Selected Features Layers</a><ul><li><a href="#41-parameters">4.1 Parameters</a></li></ul></li></ul>
+            </nav>
+          </aside>
+        
+        <p>A collection of tools to aid fixing the topology of a network.</p>
+
+<h2 id="1---disjoint-check">1 - Disjoint Check</h2>
+<p>Selects all lines connected to a line, repeats the process until no new lines are being selected.</p>
+
+<p><img src="/media/disjoint_check.gif" alt="Disjoint Check" /></p>
+
+<h3 id="11-parameters">1.1 Parameters</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Label</th>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Input layer</td>
+      <td><code class="language-plaintext highlighter-rouge">INPUT</code></td>
+      <td>[vector: line]</td>
+      <td>Line layer user wishes to run disjoint check on</td>
+    </tr>
+    <tr>
+      <td>Disjoint Check Selected Feature?</td>
+      <td><code class="language-plaintext highlighter-rouge">CHECK_SELECTED</code></td>
+      <td>[boolean] Default: False</td>
+      <td>When checked, disjoint check will be run on currently selected lines on layer. When unchecked, disjoint check will be run on a random line</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="12-python-code">1.2 Python Code</h3>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kn">import</span> <span class="nn">processing</span>
+
+<span class="n">processing</span><span class="p">.</span><span class="n">run</span><span class="p">(</span><span class="s">"algorithm_id"</span><span class="p">,</span> <span class="p">{</span><span class="n">parameters_dictionary</span><span class="p">})</span>
+
+</code></pre></div></div>
+
+<h2 id="2---recursive-selection">2 - Recursive Selection</h2>
+<p>Similar to Disjoint Check, however takes into account directionality. Will terminate when no more lines end at the start of any currently selected lines.</p>
+
+<h3 id="21-parameters">2.1 Parameters</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Label</th>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Input layer</td>
+      <td><code class="language-plaintext highlighter-rouge">INPUT</code></td>
+      <td>[vector: line]</td>
+      <td>Line layer user wishes to run recursive selection on</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="22-python-code">2.2 Python Code</h3>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kn">import</span> <span class="nn">processing</span>
+
+<span class="n">processing</span><span class="p">.</span><span class="n">run</span><span class="p">(</span><span class="s">"algorithm_id"</span><span class="p">,</span> <span class="p">{</span><span class="n">parameters_dictionary</span><span class="p">})</span>
+
+</code></pre></div></div>
+
+<h2 id="3---loop-check">3 - Loop Check</h2>
+
+<p>Dissolves all lines marked loop (any non-null values in a specified column) and splits them with those same lines. Users can select the loops and easily identify any topological errors.</p>
+
+<p><img src="/media/loop_check.gif" alt="Loop Check" /></p>
+
+<h3 id="31-parameters">3.1 Parameters</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Label</th>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Input layer</td>
+      <td><code class="language-plaintext highlighter-rouge">INPUT</code></td>
+      <td>[vector: line]</td>
+      <td>Line layer user wishes to run loop check on</td>
+    </tr>
+    <tr>
+      <td>Loop Field</td>
+      <td><code class="language-plaintext highlighter-rouge">ID_FIELD</code></td>
+      <td>[tablefield: any]  Default: Not set</td>
+      <td>field containing whether a layer is part of a loop (requires user to manually check identify all loops in line layer - all layers containing loops should have a non-NULL value in this column)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="32-outputs">3.2 Outputs</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Label</th>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Loops</td>
+      <td><code class="language-plaintext highlighter-rouge">OUTPUT</code></td>
+      <td>[vector: line]</td>
+      <td>Returns a layer split with lines - all loops should be broken at intersection points only - any that are not are discontinuities that need to be rectified in the geometry</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="33-python-code">3.3 Python Code</h3>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kn">import</span> <span class="nn">processing</span>
+
+<span class="n">processing</span><span class="p">.</span><span class="n">run</span><span class="p">(</span><span class="s">"algorithm_id"</span><span class="p">,</span> <span class="p">{</span><span class="n">parameters_dictionary</span><span class="p">})</span>
+
+</code></pre></div></div>
+
+<h2 id="4---merge-selected-features-layers">4 - Merge Selected Features Layers</h2>
+
+<p>Merges selected features from multiple layers into one layer.</p>
+
+<h3 id="41-parameters">4.1 Parameters</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Label</th>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Select Line Layers</td>
+      <td><code class="language-plaintext highlighter-rouge">LAYERS</code></td>
+      <td>[vector: line] [list]</td>
+      <td>Layers within the pipe network being analysed. See <a href="/admonitions/">Network Component Creator</a> for more details</td>
+    </tr>
+    <tr>
+      <td>Loop Field</td>
+      <td><code class="language-plaintext highlighter-rouge">ID_FIELD</code></td>
+      <td>[tablefield: any]  Default: Not set</td>
+      <td>field containing whether a layer is part of a loop (requires user to manually check identify all loops in line layer - all layers containing loops should have a non-NULL value in this column)</td>
+    </tr>
+  </tbody>
+</table>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+  
+
+  
+
+
+        
+
+
+
+      </footer>
+
+      
+
+      
+
+
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+      
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        
+
+
+<div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-square-rss" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+
+<div class="page__footer-copyright">&copy; 2026 <a href="http://localhost:4000">Pipeline Engineer</a>. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/jekyll-themes/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

@@ -1,66 +1,29 @@
 ---
 title: Features
-layout: single
+layout: splash
 permalink: /features/
 toc: true
 
 ---
 
-Let's go through some of the features Pipeline Engineer currently has to offer.
+# Features
 
-## Network Cleanup
+Features are split into three main categories. The categories are based on the design workflow.
 
-Among the everchanging landscape that is a pipeline network project, one factor that often gets left to the wayside is topographical consistency. Let's take a look at some of the Network Cleanup tools Pipeline Engineer has to help with this.
+## [Network Cleanup](/network_cleanup/)
 
-#### Disjoint Check
+A collection of tools to help rectify network topology (identify discontinuities within a network).
 
-![Disjoint Check](/media/disjoint_check.gif)
+![Disjoint Checker](/media/disjoint_check_alt.gif)
 
-The Disjoint Check function works from a selected line (or a randomly chosen one) and slowly working outwards until every connected line within the network is selected.
+## [Fluid Modelling](/fluid_modelling/)
 
-#### Recursive Selection
+Fluid modelling tools for QGIS. Currently supports single and two phase flow for select fluids.
 
-Similar to Disjoint Check, Recursive Selection also selects lines that are connected to eachother. Unlike Disjoint Check, Recursive Selection will stop when lines that don't end where the selected line(s) start.
+![Pandapipes Example](/media/pandapipes_example.gif)
 
-#### Loop Checker
+## [MTO Builder](/mto_builder/)
 
-Even after Disjoint Check and Recursive Selection select every line in a layer, the network topology may not be fully rectified. Loops throw a spanner in the works, as they can be connected from more than one point, making it easy for network holes to go unnoticed.
+![MTO Example](/media/mto_builder.png)
 
-Pipeline Engineer helps overcome this by extracting the loops identified, dissolving them and splitting them. Each section of this layer should be a continuous and smooth line - if they're not, there may be an unnoticed hole in the network.
-
-![Loop Check](/media/loop_check.gif)
-
-...SNEAKY!!!
-
-### Hydraulic Modelling
-
-
-Once network topology has been rectified, the rest is easy (... sort of)!!!
-
-
-
-Pipeline Engineer leverages the high automation factor of the pandapipes fluid modelling engine to create highly configurable and visual networks of pipe networks from GIS layers. 
-
-The attribute table of GIS data serves as the primary communicator between GIS Data and the pandapipes engine.
-
-Component information is kept in the attribute table of a GIS layer, allowing for quick adjustments to be made to the model with new results generated rapidly. 
-
-
-#### Model Abstraction
-
-In a typical workflow, building a model of a network can be quite a labourious task.
-
-![Model Abstraction](/media/model_abstraction.gif)
-
-With the Network Component Window, a pandapipes model of an existing network can quickly be abstracted from a network:
-
-
-#### Running a Pipeflow
-
-With the model abstracted, Pipeline Engineer can now run a Pipeflow. Several modes can be run, modelling both temperature and pressure. The model pictured below used the 'Hydraulics' mode, which models pressure exclusively.
-
-![Loop Check](/media/pandapipes_example.gif)
-
-#### Material Takeoff
-
-With the network modeled and line sizes and specs locked in, the Material Takeoff suite of tools can be used to get quick summaries of all the Bends, Tees and Four-Way Unions within your pipe network.
+Create Bills of Material from GIS layers.

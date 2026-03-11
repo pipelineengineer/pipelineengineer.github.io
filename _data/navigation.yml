@@ -1,13 +1,17 @@
-main:
-  - title: "Home"
-    url: /
-  - title: "Getting Started"
+
+header:
+  nav: "main"
+
+main: 
+  - title: "Home" 
+    url: / 
+  - title: "About" 
+    url: /about/ 
+  - title: "Getting Started" 
     url: /getting_started/
-  - title: "Features"
+  - title: "Features" 
     url: /features/
-  - title: "Blog"
-    url: /blog/
-  - title: "Repository"
-    url: https://github.com/pipelineengineer/pipelineEngineer
-  - title: "Contact"
+  - title: "Blog" 
+    url: /blog/ 
+  - title: "Contact" 
     url: /contact/

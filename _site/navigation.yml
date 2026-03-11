@@ -1,9 +1,17 @@
-main:
-  - title: "Home"
-    url: /
-  - title: "About"
-    url: /about/
-  - title: "Projects"
-    url: /projects/
-  - title: "Blog"
-    url: /blog/
+
+header:
+  nav: "main"
+
+main: 
+  - title: "Home" 
+    url: / 
+  - title: "About" 
+    url: /about/ 
+  - title: "Getting Started" 
+    url: /getting_started/
+  - title: "Features" 
+    url: /features/
+  - title: "Blog" 
+    url: /blog/ 
+  - title: "Contact" 
+    url: /contact/

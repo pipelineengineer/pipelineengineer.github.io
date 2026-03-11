@@ -1,14 +1,19 @@
+
+
 <!doctype html>
 <!--
-  Minimal Mistakes Jekyll Theme 4.27.3 by Michael Rose
-  Copyright 2013-2025 Michael Rose - mademistakes.com | @mmistakes
+  Minimal Mistakes Jekyll Theme 4.28.0 by Michael Rose
+  Copyright 2013-2026 Michael Rose - mademistakes.com | @mmistakes
+  Copyright 2024-2026 iBug - ibugone.com | @iBug
   Free for personal and commercial use under the MIT license
   https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
 -->
 
 <html lang="en" class="no-js">
   <head>
-    <meta charset="utf-8">
+    
+<meta charset="utf-8">
+
 
 <!-- begin _includes/seo.html --><title>Getting Started - Pipeline Engineer</title>
 <meta name="description" content="A Data Driven Approach to Pipeline Projects">
@@ -23,6 +28,8 @@
 
 
   <meta property="og:description" content="A Data Driven Approach to Pipeline Projects">
+
+
 
 
 
@@ -76,7 +83,8 @@
   </head>
 
   <body class="layout--single" dir="ltr">
-    <nav class="skip-links">
+    
+<nav class="skip-links" aria-label="Skip links">
   <ul>
     <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
     <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
@@ -86,10 +94,11 @@
 
     
 
+
 <div class="masthead">
   <div class="masthead__inner-wrap">
     <div class="masthead__menu">
-      <nav id="site-nav" class="greedy-nav">
+      <nav id="site-nav" class="greedy-nav" aria-label="Primary navigation">
         
         <a class="site-title" href="/">
           Pipeline Engineer
@@ -101,6 +110,12 @@
                 
                 
               >Home</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/about/"
+                
+                
+              >About</a>
             </li><li class="masthead__menu-item">
               <a
                 href="/getting_started/"
@@ -119,12 +134,6 @@
                 
                 
               >Blog</a>
-            </li><li class="masthead__menu-item">
-              <a
-                href="https://github.com/pipelineengineer/pipelineEngineerPlugin"
-                
-                
-              >Repository</a>
             </li><li class="masthead__menu-item">
               <a
                 href="/contact/"
@@ -151,11 +160,14 @@
 
 
 
+
+
 <div id="main" role="main">
   
 
 
-  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
     <meta itemprop="headline" content="Getting Started">
     
     
@@ -164,28 +176,30 @@
     <div class="page__inner-wrap">
       
         <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
             <a href="http://localhost:4000/getting_started/" itemprop="url">Getting Started
 </a>
           </h1>
           
 
 
+
         </header>
       
 
-      <section class="page__content" itemprop="text">
+      <section class="page__content e-content" itemprop="text">
         
-        <p>Right from installation, you will have access to many different functionalities Pipeline Engineer has to offer.</p>
-
-<p>In order to perform hydraulic modelling with Pipeline Engineer however, you will need to install pandapipes in your QGIS Python environment.</p>
-
-<p>The easiest way to do this is to run the following command in the OSGeo4W Shell:</p>
+        <p>From install, users should be able to use the network cleanup module.
+In order to gain access to the Fluid Modelling Module, users need to ensure that the <a href="https://www.pandapipes.org/">pandapipes</a> library is installed in their QGIS environment. Users can install the pandapipes library by pasting the following command into the OSGeo4w Shell:-</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install </span>pandapipes
 </code></pre></div></div>
-
-<p>This will install pandapipes along with all it’s dependancies.</p>
+<p>Depending on their version of QGIS, users may not be able to access the MTO module either. If this is the case, ensure that the <a href="https://pandas.pydata.org/">pandas</a> library is installed in your QGIS environment. Similarly, users can paste the following command into the OsGeo4W shell to install this library:-</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install </span>pandas
+</code></pre></div></div>
+<p>Sometimes, the <a href="https://openpyxl.readthedocs.io/en/stable/">openpyxyl</a> library will also be required for the MTO builder.</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install </span>openpyxyl
+</code></pre></div></div>
 
         
       </section>
@@ -194,14 +208,21 @@
         
         
 
+  
+
+  
+
 
         
+
+
 
       </footer>
 
       
 
       
+
 
     </div>
 
@@ -224,6 +245,7 @@
 <!-- end custom footer snippets -->
         
 
+
 <div class="page__footer-follow">
   <ul class="social-icons">
     
@@ -231,19 +253,21 @@
     
 
     
-      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-square-rss" aria-hidden="true"></i> Feed</a></li>
     
   </ul>
 </div>
 
 
-<div class="page__footer-copyright">&copy; 2025 <a href="http://localhost:4000">Pipeline Engineer</a>. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/jekyll-themes/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a>.</div>
+<div class="page__footer-copyright">&copy; 2026 <a href="http://localhost:4000">Pipeline Engineer</a>. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/jekyll-themes/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a>.</div>
 
       </footer>
     </div>
 
     
+
   <script src="/assets/js/main.min.js"></script>
+
 
 
 

@@ -1,14 +1,19 @@
+
+
 <!doctype html>
 <!--
-  Minimal Mistakes Jekyll Theme 4.27.3 by Michael Rose
-  Copyright 2013-2025 Michael Rose - mademistakes.com | @mmistakes
+  Minimal Mistakes Jekyll Theme 4.28.0 by Michael Rose
+  Copyright 2013-2026 Michael Rose - mademistakes.com | @mmistakes
+  Copyright 2024-2026 iBug - ibugone.com | @iBug
   Free for personal and commercial use under the MIT license
   https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
 -->
 
 <html lang="en" class="no-js">
   <head>
-    <meta charset="utf-8">
+    
+<meta charset="utf-8">
+
 
 <!-- begin _includes/seo.html --><title>Features - Pipeline Engineer</title>
 <meta name="description" content="A Data Driven Approach to Pipeline Projects">
@@ -23,6 +28,8 @@
 
 
   <meta property="og:description" content="A Data Driven Approach to Pipeline Projects">
+
+
 
 
 
@@ -75,8 +82,9 @@
 
   </head>
 
-  <body class="layout--single" dir="ltr">
-    <nav class="skip-links">
+  <body class="layout--splash" dir="ltr">
+    
+<nav class="skip-links" aria-label="Skip links">
   <ul>
     <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
     <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
@@ -86,10 +94,11 @@
 
     
 
+
 <div class="masthead">
   <div class="masthead__inner-wrap">
     <div class="masthead__menu">
-      <nav id="site-nav" class="greedy-nav">
+      <nav id="site-nav" class="greedy-nav" aria-label="Primary navigation">
         
         <a class="site-title" href="/">
           Pipeline Engineer
@@ -101,6 +110,12 @@
                 
                 
               >Home</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/about/"
+                
+                
+              >About</a>
             </li><li class="masthead__menu-item">
               <a
                 href="/getting_started/"
@@ -119,12 +134,6 @@
                 
                 
               >Blog</a>
-            </li><li class="masthead__menu-item">
-              <a
-                href="https://github.com/pipelineengineer/pipelineEngineerPlugin"
-                
-                
-              >Repository</a>
             </li><li class="masthead__menu-item">
               <a
                 href="/contact/"
@@ -149,117 +158,38 @@
 
 
 
-
-
 <div id="main" role="main">
-  
-
-
-  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+  <article class="splash" itemscope itemtype="https://schema.org/CreativeWork">
     <meta itemprop="headline" content="Features">
     
     
     
 
-    <div class="page__inner-wrap">
-      
-        <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">
-            <a href="http://localhost:4000/features/" itemprop="url">Features
-</a>
-          </h1>
-          
+    <section class="page__content" itemprop="text">
+      <h1 id="features">Features</h1>
 
+<p>Features are split into three main categories. The categories are based on the design workflow.</p>
 
-        </header>
-      
+<h2 id="network-cleanup"><a href="/network_cleanup/">Network Cleanup</a></h2>
 
-      <section class="page__content" itemprop="text">
-        
-          <aside class="sidebar__right ">
-            <nav class="toc">
-              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
-              <ul class="toc__menu"><li><a href="#network-cleanup">Network Cleanup</a><ul><li><a href="#disjoint-check">Disjoint Check</a></li><li><a href="#recursive-selection">Recursive Selection</a></li><li><a href="#loop-checker">Loop Checker</a></li></ul></li><li><a href="#hydraulic-modelling">Hydraulic Modelling</a><ul><li><a href="#model-abstraction">Model Abstraction</a></li><li><a href="#running-a-pipeflow">Running a Pipeflow</a></li><li><a href="#material-takeoff">Material Takeoff</a></li></ul></li></ul></li></ul>
-            </nav>
-          </aside>
-        
-        <p>Let’s go some of the features Pipeline Engineer currently has to offer.</p>
+<p>A collection of tools to help rectify network topology (identify discontinuities within a network).</p>
 
-<h2 id="network-cleanup">Network Cleanup</h2>
+<p><img src="/media/disjoint_check_alt.gif" alt="Disjoint Checker" /></p>
 
-<p>Among the everchanging landscape that is a pipeline network project, one factor that often gets left to the wayside is topographical consistency. Let’s take a look at some of the Network Cleanup tools Pipeline Engineer has to help with this.</p>
+<h2 id="fluid-modelling"><a href="/fluid_modelling/">Fluid Modelling</a></h2>
 
-<h4 id="disjoint-check">Disjoint Check</h4>
+<p>Fluid modelling tools for QGIS. Currently supports single and two phase flow for select fluids.</p>
 
-<p><img src="/media/disjoint_check.gif" alt="Disjoint Check" /></p>
+<p><img src="/media/pandapipes_example.gif" alt="Pandapipes Example" /></p>
 
-<p>The Disjoint Check function works from a selected line (or a randomly chosen one) and slowly working outwards until every connected line within the network is selected.</p>
+<h2 id="mto-builder"><a href="/mto_builder/">MTO Builder</a></h2>
 
-<h4 id="recursive-selection">Recursive Selection</h4>
+<p><img src="/media/mto_builder.png" alt="MTO Example" /></p>
 
-<p>Similar to Disjoint Check, Recursive Selection also selects lines that are connected to eachother. Unlike Disjoint Check, Recursive Selection will stop when lines that that don’t end where the selected line(s) start.</p>
+<p>Create Bills of Material from GIS layers.</p>
 
-<h4 id="loop-checker">Loop Checker</h4>
-
-<p>Even after Disjoint Check and Recursive Selection select every line in a layer, the network topology may not be fully rectified. Loops throw a spanner in the works, as they can be connected from more than one point, making it easy for network holes to go unnoticed.</p>
-
-<p>Pipeline Engineer helps overcome this by extracting the loops identified, dissolving them and splitting them. Each section of this layer should be a continuous and smooth line - if they’re not, there may be an unnoticed hole in the network.</p>
-
-<p><img src="/media/loop_check.gif" alt="Loop Check" /></p>
-
-<p>…SNEAKY!!!</p>
-
-<h3 id="hydraulic-modelling">Hydraulic Modelling</h3>
-
-<p>Once network topology has been rectified, the rest is easy (… sort of)!!!</p>
-
-<p>Pipeline Engineer leverages the high automation factor of the pandapipes fluid modelling engine to create highly configurable and visual networks of pipe networks from GIS layers.</p>
-
-<p>The attribute table of GIS data serves as the primary communicator between GIS Data and the pandapipes engine.</p>
-
-<p>Component information is kept in the attribute table of a GIS layer, allowing for quick adjustments to be made to the model with new results generated rapidly.</p>
-
-<h4 id="model-abstraction">Model Abstraction</h4>
-
-<p>In a typical workflow, building a model of a network can be quite a labourious task.</p>
-
-<p><img src="/media/model_abstraction.gif" alt="Model Abstraction" /></p>
-
-<p>With the Network Component Window, a pandapipes model of an existing network can quickly be abstracted from a network:</p>
-
-<h4 id="running-a-pipeflow">Running a Pipeflow</h4>
-
-<p>With the model abstracted, Pipeline Engineer can now run a Pipeflow. Several modes can be run, modelling both temperature and pressure. The model pictured below used the ‘Hydraulics’ mode, which models pressure exclusively.</p>
-
-<p><img src="/media/pandapipes_example.gif" alt="Loop Check" /></p>
-
-<h4 id="material-takeoff">Material Takeoff</h4>
-
-<p>With the network modeled and line sizes and specs locked in, the Material Takeoff suite of tools can be used to get quick summaries of all the Bends, Tees and Four-Way Unions within your pipe network.</p>
-
-        
-      </section>
-
-      <footer class="page__meta">
-        
-        
-
-
-        
-
-      </footer>
-
-      
-
-      
-
-    </div>
-
-    
+    </section>
   </article>
-
-  
-  
 </div>
 
       
@@ -274,6 +204,7 @@
 <!-- end custom footer snippets -->
         
 
+
 <div class="page__footer-follow">
   <ul class="social-icons">
     
@@ -281,19 +212,21 @@
     
 
     
-      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-square-rss" aria-hidden="true"></i> Feed</a></li>
     
   </ul>
 </div>
 
 
-<div class="page__footer-copyright">&copy; 2025 <a href="http://localhost:4000">Pipeline Engineer</a>. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/jekyll-themes/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a>.</div>
+<div class="page__footer-copyright">&copy; 2026 <a href="http://localhost:4000">Pipeline Engineer</a>. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/jekyll-themes/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a>.</div>
 
       </footer>
     </div>
 
     
+
   <script src="/assets/js/main.min.js"></script>
+
 
 
 

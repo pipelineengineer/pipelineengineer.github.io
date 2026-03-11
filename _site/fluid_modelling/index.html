@@ -1,0 +1,903 @@
+
+
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.28.0 by Michael Rose
+  Copyright 2013-2026 Michael Rose - mademistakes.com | @mmistakes
+  Copyright 2024-2026 iBug - ibugone.com | @iBug
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+
+<html lang="en" class="no-js">
+  <head>
+    
+<meta charset="utf-8">
+
+
+<!-- begin _includes/seo.html --><title>Fluid Modelling - Pipeline Engineer</title>
+<meta name="description" content="A Data Driven Approach to Pipeline Projects">
+
+
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Pipeline Engineer">
+<meta property="og:title" content="Fluid Modelling">
+<meta property="og:url" content="http://localhost:4000/fluid_modelling/">
+
+
+  <meta property="og:description" content="A Data Driven Approach to Pipeline Projects">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/fluid_modelling/">
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Pipeline Engineer Feed">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+  
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single" dir="ltr">
+    
+<nav class="skip-links" aria-label="Skip links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav" aria-label="Primary navigation">
+        
+        <a class="site-title" href="/">
+          Pipeline Engineer
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a
+                href="/"
+                
+                
+              >Home</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/about/"
+                
+                
+              >About</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/getting_started/"
+                
+                
+              >Getting Started</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/features/"
+                
+                
+              >Features</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/blog/"
+                
+                
+              >Blog</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/contact/"
+                
+                
+              >Contact</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+
+
+
+
+<div id="main" role="main">
+  
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Fluid Modelling">
+    
+    
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/fluid_modelling/" itemprop="url">Fluid Modelling
+</a>
+          </h1>
+          
+
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+          <aside class="sidebar__right ">
+            <nav class="toc" aria-label="Table of contents">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
+              <ul class="toc__menu"><li><a href="#1-component-creation">1 Component Creation</a></li><li><a href="#2-fluid-creation">2 Fluid Creation</a></li><li><a href="#3-fluid-modelling-algorithms">3 Fluid Modelling Algorithms</a></li><li><a href="#31-add-parameter-to-fluid-layer">3.1 Add Parameter to Fluid Layer</a><ul><li><a href="#311-parameters">3.1.1 Parameters</a></li><li><a href="#312-outputs">3.1.2 Outputs</a></li><li><a href="#313-python-code">3.1.3 Python Code</a></li></ul></li><li><a href="#32-run-pipeflow">3.2 Run Pipeflow</a><ul><li><a href="#321-parameters">3.2.1 Parameters</a></li><li><a href="#322-outputs">3.2.2 Outputs</a></li><li><a href="#323-python-code">3.2.3 Python Code</a></li></ul></li><li><a href="#33-run-pipeflow-beggs-brill">3.3 Run Pipeflow (Beggs Brill)</a><ul><li><a href="#331-parameters">3.3.1 Parameters</a></li><li><a href="#332-outputs">3.3.2 Outputs</a></li><li><a href="#333-python-code">3.3.3 Python Code</a></li></ul></li><li><a href="#34-run-pipeflow-homogenous-model">3.4 Run Pipeflow (Homogenous Model)</a><ul><li><a href="#341-parameters">3.4.1 Parameters</a></li><li><a href="#342-outputs">3.4.2 Outputs</a></li><li><a href="#343-python-code">3.4.3 Python Code</a></li></ul></li></ul>
+            </nav>
+          </aside>
+        
+        <p>Pipeline Engineer’s Fluid Modelling capabilities heavily leverage the <a href="https://www.pandapipes.org/">Pandapipes</a> Python library. The following sections detail how to use Pipeline Engineer for modelling networks.</p>
+
+<h1 id="1-component-creation">1 Component Creation</h1>
+
+<p>Layers are either created or abstracted from the ‘Create Network Component’ Dialog that can be accessed either from the QGIS toolbar or plugin menu:-</p>
+
+<p><img src="/media/network_component_creator.png" alt="Network Component Creator Toolbar" /></p>
+
+<p>Networks can be created from scratch of abstracted directly from existing GIS layers (it helps if the layers being extracted from are topologically consistent, however, users can modify the network after the fact if needed).</p>
+
+<p><img src="/media/network_component_creator_dialog.png" alt="Network Component Creator" /></p>
+
+<h1 id="2-fluid-creation">2 Fluid Creation</h1>
+
+<p>The ‘Fluids’ Dialog is also available from either the toolbar or the Plugin menu:-</p>
+
+<p><img src="/media/fluids_dialog.png" alt="Fluids Toolbar" /></p>
+
+<p>Fluids properties can be viewed on the ‘Browser’ tab in the ‘Fluids’ Dialog:-</p>
+
+<p><img src="/media/fluids_browser.png" alt="Fluids Browser" /></p>
+
+<p>Users can create Fluids on the ‘Create Fluid’ tab of the ‘Fluids’ Dialog:-</p>
+
+<p><img src="/media/create_fluid.png" alt="Create Fluid" /></p>
+
+<h1 id="3-fluid-modelling-algorithms">3 Fluid Modelling Algorithms</h1>
+
+<p>All of Pipeline Engineer’s fluid modelling algorithms are available can be used directly from the QGIS Processing Toolbox.</p>
+
+<p>This has the added benefit of allowing users to automate repetitive workflows, meaning users can automate the simulation of various scenarios.</p>
+
+<p>The following sections detail the algorithms currently available and how they can be utilised in Python Scripts.</p>
+
+<h1 id="31-add-parameter-to-fluid-layer">3.1 Add Parameter to Fluid Layer</h1>
+
+<p>Adds a fluid parameter at a specified pressure and temperature to a selected layer’s attribute table.</p>
+
+<h2 id="311-parameters">3.1.1 Parameters</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Label</th>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Input layer</td>
+      <td><code class="language-plaintext highlighter-rouge">INPUT</code></td>
+      <td>[vector: any]</td>
+      <td>Layer user wishes to add fluid parameter to</td>
+    </tr>
+    <tr>
+      <td>Select Fluid</td>
+      <td><code class="language-plaintext highlighter-rouge">FLUID</code></td>
+      <td>[enumeration] Default: 0</td>
+      <td>Fluid from  which properties will be selected:- <br /> 0 - hgas <br />1 - lgas <br />2 - hydrogen  <br />3 - methane <br />4 - water <br />5 - biomethane_pure <br />6 - biomethane_treated <br />7 - air</td>
+    </tr>
+    <tr>
+      <td>Disjoint Check Selected Feature?</td>
+      <td><code class="language-plaintext highlighter-rouge">PARAMETER</code></td>
+      <td>[enumeration] Default: 1</td>
+      <td>Fluid parameter that that will be added to attribute table:- <br /> 0 - compressibility <br /> 1 - density <br /> 2 - heat capacity <br /> 3 - molar mass <br /> 4 - viscosity</td>
+    </tr>
+    <tr>
+      <td>Disjoint Check Selected Feature?</td>
+      <td><code class="language-plaintext highlighter-rouge">TEMP</code></td>
+      <td>[numeric: double] Default: 293.15</td>
+      <td>Temperature of fluid</td>
+    </tr>
+    <tr>
+      <td>Disjoint Check Selected Feature?</td>
+      <td><code class="language-plaintext highlighter-rouge">PRES</code></td>
+      <td>[numeric: double] Default: 1.00</td>
+      <td>Pressure of fluid</td>
+    </tr>
+    <tr>
+      <td>Disjoint Check Selected Feature?</td>
+      <td><code class="language-plaintext highlighter-rouge">ADD_FLUID</code></td>
+      <td>[boolean] Default: True</td>
+      <td>Adds chosen fluid to attribute table when checked</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="312-outputs">3.1.2 Outputs</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Label</th>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Parameter added</td>
+      <td><code class="language-plaintext highlighter-rouge">OUTPUT</code></td>
+      <td>[vector: any]</td>
+      <td>Returns with fluid parameter added</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="313-python-code">3.1.3 Python Code</h2>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kn">import</span> <span class="nn">processing</span>
+
+<span class="n">processing</span><span class="p">.</span><span class="n">run</span><span class="p">(</span><span class="s">"algorithm_id"</span><span class="p">,</span> <span class="p">{</span><span class="n">parameters_dictionary</span><span class="p">})</span>
+
+</code></pre></div></div>
+<h1 id="32-run-pipeflow">3.2 Run Pipeflow</h1>
+<p>The core pipeflow functionality relies leverages the fluid modelling tools from the <a href="https://pandapipes.readthedocs.io/en/latest/pipeflow/run.html">pandapipes</a> Python Library.</p>
+
+<h2 id="321-parameters">3.2.1 Parameters</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Label</th>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Select Network Layers</td>
+      <td><code class="language-plaintext highlighter-rouge">LAYERS</code></td>
+      <td>[vector: any] [list]</td>
+      <td>Layers within the pipe network being analysed. See <a href="/admonitions/">Network Component Creator</a> for more details</td>
+    </tr>
+    <tr>
+      <td>Select Fluid</td>
+      <td><code class="language-plaintext highlighter-rouge">FLUID</code></td>
+      <td>[enumeration] Default: 0</td>
+      <td>Fluid Pipeflow will be carried out using:- <br /> 0 - hgas <br />1 - lgas <br />2 - hydrogen  <br />3 - methane <br />4 - water <br />5 - biomethane_pure <br />6 - biomethane_treated <br />7 - air</td>
+    </tr>
+    <tr>
+      <td>Calculation Mode</td>
+      <td><code class="language-plaintext highlighter-rouge">CALC_MODE</code></td>
+      <td>[enumeration] Default: 0</td>
+      <td>Calculation Mode of pipeflow:- <br />0 - hydraulics <br /> 1 - bidirectional <br /> 2 - sequential</td>
+    </tr>
+    <tr>
+      <td>Maximum Iterations (Hydraulic)</td>
+      <td><code class="language-plaintext highlighter-rouge">MAX_ITER_HYD</code></td>
+      <td>[numeric: double] Default: 10000</td>
+      <td>Refer to <a href="https://pandapipes.readthedocs.io/en/latest/pipeflow/options.html">Pipeflow Options</a></td>
+    </tr>
+    <tr>
+      <td>Maximum Iterations (Thermal)</td>
+      <td><code class="language-plaintext highlighter-rouge">MAX_ITER_THERM</code></td>
+      <td>[numeric: double] Default: 10000</td>
+      <td>Refer to <a href="https://pandapipes.readthedocs.io/en/latest/pipeflow/options.html">Pipeflow Options</a></td>
+    </tr>
+    <tr>
+      <td>Pressure Error Tolerance</td>
+      <td><code class="language-plaintext highlighter-rouge">PRES_TOL</code></td>
+      <td>[numeric: double] Default: 0.0001</td>
+      <td>Refer to <a href="https://pandapipes.readthedocs.io/en/latest/pipeflow/options.html">Pipeflow Options</a></td>
+    </tr>
+    <tr>
+      <td>Velocity Error Tolerance</td>
+      <td><code class="language-plaintext highlighter-rouge">VEL_TOL</code></td>
+      <td>[numeric: double] Default: 0.0001</td>
+      <td>Refer to <a href="https://pandapipes.readthedocs.io/en/latest/pipeflow/options.html">Pipeflow Options</a></td>
+    </tr>
+    <tr>
+      <td>Temperature Error Tolerance</td>
+      <td><code class="language-plaintext highlighter-rouge">TEMP_TOL</code></td>
+      <td>[numeric: double] Default: 0.0001</td>
+      <td>Refer to <a href="https://pandapipes.readthedocs.io/en/latest/pipeflow/options.html">Pipeflow Options</a></td>
+    </tr>
+    <tr>
+      <td>Residual Tolerance</td>
+      <td><code class="language-plaintext highlighter-rouge">RES_TOL</code></td>
+      <td>[numeric: double] Default: 0.001</td>
+      <td>Refer to <a href="https://pandapipes.readthedocs.io/en/latest/pipeflow/options.html">Pipeflow Options</a></td>
+    </tr>
+    <tr>
+      <td>Ambient Temperature</td>
+      <td><code class="language-plaintext highlighter-rouge">AMBIENT_TEMP</code></td>
+      <td>[numeric: double] Default: 293.15</td>
+      <td>Refer to <a href="https://pandapipes.readthedocs.io/en/latest/pipeflow/options.html">Pipeflow Options</a></td>
+    </tr>
+    <tr>
+      <td>Friction Model</td>
+      <td><code class="language-plaintext highlighter-rouge">FRIC_MODEL</code></td>
+      <td>[enumeration] Default: 1</td>
+      <td>Refer to <a href="https://pandapipes.readthedocs.io/en/latest/pipeflow/options.html">Pipeflow Options</a></td>
+    </tr>
+    <tr>
+      <td>Alpha</td>
+      <td><code class="language-plaintext highlighter-rouge">ALPHA</code></td>
+      <td>[numeric: double] Default: 1</td>
+      <td>Refer to <a href="https://pandapipes.readthedocs.io/en/latest/pipeflow/options.html">Pipeflow Options</a></td>
+    </tr>
+    <tr>
+      <td>Nonlinear Method</td>
+      <td><code class="language-plaintext highlighter-rouge">NONLINEAR_METHOD</code></td>
+      <td>[enumeration] Default: 0</td>
+      <td>Refer to <a href="https://pandapipes.readthedocs.io/en/latest/pipeflow/options.html">Pipeflow Options</a></td>
+    </tr>
+    <tr>
+      <td>Update Hydraulic Matrix Only?</td>
+      <td><code class="language-plaintext highlighter-rouge">UPDATE_HYD_ONLY</code></td>
+      <td>[boolean] Default: False</td>
+      <td>Refer to <a href="https://pandapipes.readthedocs.io/en/latest/pipeflow/options.html">Pipeflow Options</a></td>
+    </tr>
+    <tr>
+      <td>Check Connectivity?</td>
+      <td><code class="language-plaintext highlighter-rouge">CHECK_CONNECTIVITY</code></td>
+      <td>[boolean] Default: True</td>
+      <td>Refer to <a href="https://pandapipes.readthedocs.io/en/latest/pipeflow/options.html">Pipeflow Options</a></td>
+    </tr>
+    <tr>
+      <td>Quit on Inconsistency?</td>
+      <td><code class="language-plaintext highlighter-rouge">QUIT_ON_INCONSISTENCY</code></td>
+      <td>[boolean] Default: False</td>
+      <td>Refer to <a href="https://pandapipes.readthedocs.io/en/latest/pipeflow/options.html">Pipeflow Options</a></td>
+    </tr>
+    <tr>
+      <td>Use Numba?</td>
+      <td><code class="language-plaintext highlighter-rouge">USE_NUMBA</code></td>
+      <td>[boolean] Default: True</td>
+      <td>Refer to <a href="https://pandapipes.readthedocs.io/en/latest/pipeflow/options.html">Pipeflow Options</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="322-outputs">3.2.2 Outputs</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Label</th>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Load Layers?</td>
+      <td><code class="language-plaintext highlighter-rouge">LOAD_LAYERS</code></td>
+      <td>[boolean] Default: True</td>
+      <td>When checked, will load result files to a temporary layer</td>
+    </tr>
+    <tr>
+      <td>Output Geopackage</td>
+      <td><code class="language-plaintext highlighter-rouge">OUTPUT</code></td>
+      <td>[file] Default: [Save to temporary file]</td>
+      <td>Will save result layers to specified output (will save to temporary file by default)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="323-python-code">3.2.3 Python Code</h2>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kn">import</span> <span class="nn">processing</span>
+
+<span class="n">processing</span><span class="p">.</span><span class="n">run</span><span class="p">(</span><span class="s">"algorithm_id"</span><span class="p">,</span> <span class="p">{</span><span class="n">parameters_dictionary</span><span class="p">})</span>
+
+</code></pre></div></div>
+
+<h1 id="33-run-pipeflow-beggs-brill">3.3 Run Pipeflow (Beggs Brill)</h1>
+
+<p>Runs a regular pandapipes pipeflow over a specified fluid to obtain flow distribution. Will then reverse all lines that are flowing in the opposite direction of the line geometry. Beggs and Brill correlation will be calculated from grid connections until the pressure drop along every section of pipe containing service has been calculated.</p>
+
+<p>NOTE:- At this moment, two-phase flow modules only work in cases where flow is towards pressure boundaries - this will be rectified to include all flow directions in the near future.</p>
+
+<h2 id="331-parameters">3.3.1 Parameters</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Label</th>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Select Network Layers</td>
+      <td><code class="language-plaintext highlighter-rouge">LAYERS</code></td>
+      <td>[vector: any] [list]</td>
+      <td>Layers within the pipe network being analysed. See <a href="/admonitions/">Network Component Creator</a> for more details</td>
+    </tr>
+    <tr>
+      <td>Select Fluid</td>
+      <td><code class="language-plaintext highlighter-rouge">PIPEFLOW_FLUID</code></td>
+      <td>[enumeration] Default: 0</td>
+      <td>Fluid Pipeflow will be carried out using:- <br /> 0 - hgas <br />1 - lgas <br />2 - hydrogen  <br />3 - methane <br />4 - water <br />5 - biomethane_pure <br />6 - biomethane_treated <br />7 - air</td>
+    </tr>
+    <tr>
+      <td>Select Liquid Phase</td>
+      <td><code class="language-plaintext highlighter-rouge">LIQUID</code></td>
+      <td>[enumeration] Default: 0</td>
+      <td>Liquid Phase of fluid:- <br /> 0 - water</td>
+    </tr>
+    <tr>
+      <td>Select Gas Phase</td>
+      <td><code class="language-plaintext highlighter-rouge">GAS</code></td>
+      <td>[enumeration] Default: 0</td>
+      <td>Fluid Pipeflow will be carried out using:- <br /> 0 - hgas <br />1 - lgas <br />2 - hydrogen  <br />3 - methane <br />4 - biomethane_pure <br />5 - biomethane_treated <br />6 - air</td>
+    </tr>
+    <tr>
+      <td>Gas Fraction</td>
+      <td><code class="language-plaintext highlighter-rouge">GAS_FRACTION</code></td>
+      <td>[numeric: double] Default: 0.5</td>
+      <td>Fraction of total flow rate that is a gaseous phase</td>
+    </tr>
+    <tr>
+      <td>Surface Tension</td>
+      <td><code class="language-plaintext highlighter-rouge">SURF_TENS</code></td>
+      <td>[enumeration] Default: 0.072</td>
+      <td>Surface tension of liquid phase (N/m)</td>
+    </tr>
+    <tr>
+      <td>Maximum Iterations (Hydraulic)</td>
+      <td><code class="language-plaintext highlighter-rouge">MAX_ITER_HYD</code></td>
+      <td>[numeric: double] Default: 10000</td>
+      <td>Refer to <a href="https://pandapipes.readthedocs.io/en/latest/pipeflow/options.html">Pipeflow Options</a></td>
+    </tr>
+    <tr>
+      <td>Maximum Iterations (Thermal)</td>
+      <td><code class="language-plaintext highlighter-rouge">MAX_ITER_THERM</code></td>
+      <td>[numeric: double] Default: 10000</td>
+      <td>Refer to <a href="https://pandapipes.readthedocs.io/en/latest/pipeflow/options.html">Pipeflow Options</a></td>
+    </tr>
+    <tr>
+      <td>Pressure Error Tolerance</td>
+      <td><code class="language-plaintext highlighter-rouge">PRES_TOL</code></td>
+      <td>[numeric: double] Default: 0.0001</td>
+      <td>Refer to <a href="https://pandapipes.readthedocs.io/en/latest/pipeflow/options.html">Pipeflow Options</a></td>
+    </tr>
+    <tr>
+      <td>Velocity Error Tolerance</td>
+      <td><code class="language-plaintext highlighter-rouge">VEL_TOL</code></td>
+      <td>[numeric: double] Default: 0.0001</td>
+      <td>Refer to <a href="https://pandapipes.readthedocs.io/en/latest/pipeflow/options.html">Pipeflow Options</a></td>
+    </tr>
+    <tr>
+      <td>Temperature Error Tolerance</td>
+      <td><code class="language-plaintext highlighter-rouge">TEMP_TOL</code></td>
+      <td>[numeric: double] Default: 0.0001</td>
+      <td>Refer to <a href="https://pandapipes.readthedocs.io/en/latest/pipeflow/options.html">Pipeflow Options</a></td>
+    </tr>
+    <tr>
+      <td>Residual Tolerance</td>
+      <td><code class="language-plaintext highlighter-rouge">RES_TOL</code></td>
+      <td>[numeric: double] Default: 0.001</td>
+      <td>Refer to <a href="https://pandapipes.readthedocs.io/en/latest/pipeflow/options.html">Pipeflow Options</a></td>
+    </tr>
+    <tr>
+      <td>Ambient Temperature</td>
+      <td><code class="language-plaintext highlighter-rouge">AMBIENT_TEMP</code></td>
+      <td>[numeric: double] Default: 293.15</td>
+      <td>Refer to <a href="https://pandapipes.readthedocs.io/en/latest/pipeflow/options.html">Pipeflow Options</a></td>
+    </tr>
+    <tr>
+      <td>Friction Model</td>
+      <td><code class="language-plaintext highlighter-rouge">FRIC_MODEL</code></td>
+      <td>[enumeration] Default: 1</td>
+      <td>Refer to <a href="https://pandapipes.readthedocs.io/en/latest/pipeflow/options.html">Pipeflow Options</a></td>
+    </tr>
+    <tr>
+      <td>Alpha</td>
+      <td><code class="language-plaintext highlighter-rouge">ALPHA</code></td>
+      <td>[numeric: double] Default: 1</td>
+      <td>Refer to <a href="https://pandapipes.readthedocs.io/en/latest/pipeflow/options.html">Pipeflow Options</a></td>
+    </tr>
+    <tr>
+      <td>Nonlinear Method</td>
+      <td><code class="language-plaintext highlighter-rouge">NONLINEAR_METHOD</code></td>
+      <td>[enumeration] Default: 0</td>
+      <td>Refer to <a href="https://pandapipes.readthedocs.io/en/latest/pipeflow/options.html">Pipeflow Options</a></td>
+    </tr>
+    <tr>
+      <td>Update Hydraulic Matrix Only?</td>
+      <td><code class="language-plaintext highlighter-rouge">UPDATE_HYD_ONLY</code></td>
+      <td>[boolean] Default: False</td>
+      <td>Refer to <a href="https://pandapipes.readthedocs.io/en/latest/pipeflow/options.html">Pipeflow Options</a></td>
+    </tr>
+    <tr>
+      <td>Check Connectivity?</td>
+      <td><code class="language-plaintext highlighter-rouge">CHECK_CONNECTIVITY</code></td>
+      <td>[boolean] Default: True</td>
+      <td>Refer to <a href="https://pandapipes.readthedocs.io/en/latest/pipeflow/options.html">Pipeflow Options</a></td>
+    </tr>
+    <tr>
+      <td>Quit on Inconsistency?</td>
+      <td><code class="language-plaintext highlighter-rouge">QUIT_ON_INCONSISTENCY</code></td>
+      <td>[boolean] Default: False</td>
+      <td>Refer to <a href="https://pandapipes.readthedocs.io/en/latest/pipeflow/options.html">Pipeflow Options</a></td>
+    </tr>
+    <tr>
+      <td>Use Numba?</td>
+      <td><code class="language-plaintext highlighter-rouge">USE_NUMBA</code></td>
+      <td>[boolean] Default: True</td>
+      <td>Refer to <a href="https://pandapipes.readthedocs.io/en/latest/pipeflow/options.html">Pipeflow Options</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="332-outputs">3.3.2 Outputs</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Label</th>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Load Layers?</td>
+      <td><code class="language-plaintext highlighter-rouge">LOAD_LAYERS</code></td>
+      <td>[boolean] Default: True</td>
+      <td>When checked, will load result files to a temporary layer</td>
+    </tr>
+    <tr>
+      <td>Output Geopackage</td>
+      <td><code class="language-plaintext highlighter-rouge">OUTPUT</code></td>
+      <td>[file] Default: [Save to temporary file]</td>
+      <td>Will save result layers to specified output (will save to temporary file by default)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="333-python-code">3.3.3 Python Code</h2>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kn">import</span> <span class="nn">processing</span>
+
+<span class="n">processing</span><span class="p">.</span><span class="n">run</span><span class="p">(</span><span class="s">"algorithm_id"</span><span class="p">,</span> <span class="p">{</span><span class="n">parameters_dictionary</span><span class="p">})</span>
+
+</code></pre></div></div>
+<h1 id="34-run-pipeflow-homogenous-model">3.4 Run Pipeflow (Homogenous Model)</h1>
+
+<p>Runs a regular pandapipes pipeflow over a specified fluid to obtain flow distribution. Will then reverse all lines that are flowing in the opposite direction of the line geometry. A homogenous two-phase model (i.e. constant gas &amp; liquid velocity) is used to back-calculate the pressure from the grids outwards.</p>
+
+<p>NOTE:- At this moment, two-phase flow modules only work in cases where flow is towards pressure boundaries - this will be rectified to include all flow directions in the near future.</p>
+
+<h2 id="341-parameters">3.4.1 Parameters</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Label</th>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Select Network Layers</td>
+      <td><code class="language-plaintext highlighter-rouge">LAYERS</code></td>
+      <td>[vector: any] [list]</td>
+      <td>Layers within the pipe network being analysed. See <a href="/admonitions/">Network Component Creator</a> for more details</td>
+    </tr>
+    <tr>
+      <td>Select Fluid</td>
+      <td><code class="language-plaintext highlighter-rouge">PIPEFLOW_FLUID</code></td>
+      <td>[enumeration] Default: 0</td>
+      <td>Fluid Pipeflow will be carried out using:- <br /> 0 - hgas <br />1 - lgas <br />2 - hydrogen  <br />3 - methane <br />4 - water <br />5 - biomethane_pure <br />6 - biomethane_treated <br />7 - air</td>
+    </tr>
+    <tr>
+      <td>Select Liquid Phase</td>
+      <td><code class="language-plaintext highlighter-rouge">LIQUID</code></td>
+      <td>[enumeration] Default: 0</td>
+      <td>Liquid Phase of fluid:- <br /> 0 - water</td>
+    </tr>
+    <tr>
+      <td>Select Gas Phase</td>
+      <td><code class="language-plaintext highlighter-rouge">GAS</code></td>
+      <td>[enumeration] Default: 0</td>
+      <td>Fluid Pipeflow will be carried out using:- <br /> 0 - hgas <br />1 - lgas <br />2 - hydrogen  <br />3 - methane <br />4 - biomethane_pure <br />5 - biomethane_treated <br />6 - air</td>
+    </tr>
+    <tr>
+      <td>Gas Fraction</td>
+      <td><code class="language-plaintext highlighter-rouge">GAS_FRACTION</code></td>
+      <td>[numeric: double] Default: 0.5</td>
+      <td>Fraction of total flow rate that is a gaseous phase</td>
+    </tr>
+    <tr>
+      <td>Surface Tension</td>
+      <td><code class="language-plaintext highlighter-rouge">SURF_TENS</code></td>
+      <td>[enumeration] Default: 0.072</td>
+      <td>Surface tension of liquid phase (N/m)</td>
+    </tr>
+    <tr>
+      <td>Maximum Iterations (Hydraulic)</td>
+      <td><code class="language-plaintext highlighter-rouge">MAX_ITER_HYD</code></td>
+      <td>[numeric: double] Default: 10000</td>
+      <td>Refer to <a href="https://pandapipes.readthedocs.io/en/latest/pipeflow/options.html">Pipeflow Options</a></td>
+    </tr>
+    <tr>
+      <td>Maximum Iterations (Thermal)</td>
+      <td><code class="language-plaintext highlighter-rouge">MAX_ITER_THERM</code></td>
+      <td>[numeric: double] Default: 10000</td>
+      <td>Refer to <a href="https://pandapipes.readthedocs.io/en/latest/pipeflow/options.html">Pipeflow Options</a></td>
+    </tr>
+    <tr>
+      <td>Pressure Error Tolerance</td>
+      <td><code class="language-plaintext highlighter-rouge">PRES_TOL</code></td>
+      <td>[numeric: double] Default: 0.0001</td>
+      <td>Refer to <a href="https://pandapipes.readthedocs.io/en/latest/pipeflow/options.html">Pipeflow Options</a></td>
+    </tr>
+    <tr>
+      <td>Velocity Error Tolerance</td>
+      <td><code class="language-plaintext highlighter-rouge">VEL_TOL</code></td>
+      <td>[numeric: double] Default: 0.0001</td>
+      <td>Refer to <a href="https://pandapipes.readthedocs.io/en/latest/pipeflow/options.html">Pipeflow Options</a></td>
+    </tr>
+    <tr>
+      <td>Temperature Error Tolerance</td>
+      <td><code class="language-plaintext highlighter-rouge">TEMP_TOL</code></td>
+      <td>[numeric: double] Default: 0.0001</td>
+      <td>Refer to <a href="https://pandapipes.readthedocs.io/en/latest/pipeflow/options.html">Pipeflow Options</a></td>
+    </tr>
+    <tr>
+      <td>Residual Tolerance</td>
+      <td><code class="language-plaintext highlighter-rouge">RES_TOL</code></td>
+      <td>[numeric: double] Default: 0.001</td>
+      <td>Refer to <a href="https://pandapipes.readthedocs.io/en/latest/pipeflow/options.html">Pipeflow Options</a></td>
+    </tr>
+    <tr>
+      <td>Ambient Temperature</td>
+      <td><code class="language-plaintext highlighter-rouge">AMBIENT_TEMP</code></td>
+      <td>[numeric: double] Default: 293.15</td>
+      <td>Refer to <a href="https://pandapipes.readthedocs.io/en/latest/pipeflow/options.html">Pipeflow Options</a></td>
+    </tr>
+    <tr>
+      <td>Friction Model</td>
+      <td><code class="language-plaintext highlighter-rouge">FRIC_MODEL</code></td>
+      <td>[enumeration] Default: 1</td>
+      <td>Refer to <a href="https://pandapipes.readthedocs.io/en/latest/pipeflow/options.html">Pipeflow Options</a></td>
+    </tr>
+    <tr>
+      <td>Alpha</td>
+      <td><code class="language-plaintext highlighter-rouge">ALPHA</code></td>
+      <td>[numeric: double] Default: 1</td>
+      <td>Refer to <a href="https://pandapipes.readthedocs.io/en/latest/pipeflow/options.html">Pipeflow Options</a></td>
+    </tr>
+    <tr>
+      <td>Nonlinear Method</td>
+      <td><code class="language-plaintext highlighter-rouge">NONLINEAR_METHOD</code></td>
+      <td>[enumeration] Default: 0</td>
+      <td>Refer to <a href="https://pandapipes.readthedocs.io/en/latest/pipeflow/options.html">Pipeflow Options</a></td>
+    </tr>
+    <tr>
+      <td>Update Hydraulic Matrix Only?</td>
+      <td><code class="language-plaintext highlighter-rouge">UPDATE_HYD_ONLY</code></td>
+      <td>[boolean] Default: False</td>
+      <td>Refer to <a href="https://pandapipes.readthedocs.io/en/latest/pipeflow/options.html">Pipeflow Options</a></td>
+    </tr>
+    <tr>
+      <td>Check Connectivity?</td>
+      <td><code class="language-plaintext highlighter-rouge">CHECK_CONNECTIVITY</code></td>
+      <td>[boolean] Default: True</td>
+      <td>Refer to <a href="https://pandapipes.readthedocs.io/en/latest/pipeflow/options.html">Pipeflow Options</a></td>
+    </tr>
+    <tr>
+      <td>Quit on Inconsistency?</td>
+      <td><code class="language-plaintext highlighter-rouge">QUIT_ON_INCONSISTENCY</code></td>
+      <td>[boolean] Default: False</td>
+      <td>Refer to <a href="https://pandapipes.readthedocs.io/en/latest/pipeflow/options.html">Pipeflow Options</a></td>
+    </tr>
+    <tr>
+      <td>Use Numba?</td>
+      <td><code class="language-plaintext highlighter-rouge">USE_NUMBA</code></td>
+      <td>[boolean] Default: True</td>
+      <td>Refer to <a href="https://pandapipes.readthedocs.io/en/latest/pipeflow/options.html">Pipeflow Options</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="342-outputs">3.4.2 Outputs</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Label</th>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Load Layers?</td>
+      <td><code class="language-plaintext highlighter-rouge">LOAD_LAYERS</code></td>
+      <td>[boolean] Default: True</td>
+      <td>When checked, will load result files to a temporary layer</td>
+    </tr>
+    <tr>
+      <td>Output Geopackage</td>
+      <td><code class="language-plaintext highlighter-rouge">OUTPUT</code></td>
+      <td>[file] Default: [Save to temporary file]</td>
+      <td>Will save result layers to specified output (will save to temporary file by default)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="343-python-code">3.4.3 Python Code</h2>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kn">import</span> <span class="nn">processing</span>
+
+<span class="n">processing</span><span class="p">.</span><span class="n">run</span><span class="p">(</span><span class="s">"algorithm_id"</span><span class="p">,</span> <span class="p">{</span><span class="n">parameters_dictionary</span><span class="p">})</span>
+
+</code></pre></div></div>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+  
+
+  
+
+
+        
+
+
+
+      </footer>
+
+      
+
+      
+
+
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+      
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        
+
+
+<div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-square-rss" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+
+<div class="page__footer-copyright">&copy; 2026 <a href="http://localhost:4000">Pipeline Engineer</a>. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/jekyll-themes/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

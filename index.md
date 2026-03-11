@@ -1,41 +1,52 @@
 ---
 layout: splash
 title: "Pipeline Engineer"
+excerpt: "Abstract fluid flow models of pipe networks and Bills of Material directly from GIS layers."
 header:
   overlay_color: "#000"
-  overlay_filter: "0.3"
-  overlay_image: /media/network_banner.png  # optional
+  overlay_filter: "0.3" 
+  overlay_image: /media/network_banner.png
+  
 
 feature_row:
   - image_path: /media/images/example.png
-    alt: "Features"
-    title: "Features"
-    excerpt: "Explore some of the features Pipeline Engineer has available."
-    url: "/features/"
+    alt: "Network Cleanup"
+    title: "Network Cleanup"
+    excerpt: "Explore the capabilities of our network connectivity tool kit."
+    url: "/network_cleanup/"
     btn_label: "Learn More"
     btn_class: "btn--primary"
 
   - image_path: /media/images/tas_grid.png
-    alt: "Getting Started"
-    title: "Getting Started"
-    excerpt: "Find out how you can begin using Pipeline Engineer to speed up your work flows."
-    url: "/getting_started/"
+    alt: "Fluid Modelling"
+    title: "Fluid Modelling"
+    excerpt: "Abstract two-phase or single-phase hydraulic models directly from GIS Layers."
+    url: "/fluid_modelling/"
     btn_label: "Learn More"
     btn_class: "btn--primary"
 
   - image_path: /media/images/interface.png
-    alt: "Documentation"
-    title: "Documentation"
-    excerpt: "Full instructions, examples, and technical explanation."
-    url: "/docs/"
+    alt: "MTO Builder"
+    title: "MTO Builder"
+    excerpt: "Produce high quality Bills of Materials from kilometres of pipe all the way down to every nut and bolt."
+    url: "/mto_builder/"
     btn_label: "Read Docs"
     btn_class: "btn--primary"
 
 ---
-### A Data Driven Approach to Pipeline Projects
+# A Data Driven Approach to Pipeline Projects
 
-Pipeline Engineer is a [QGIS](https://qgis.org/) Plugin that aims to speed up engineering work flows on pipeline projects.
+Pipeline Engineer is a [QGIS](https://qgis.org/) plugin that streamlines the design and construction of pipe systems.
+
+Current features include:-
+- Network Cleanup - Tools to check network topology (identify discontinuities in a line layer).
+- Fluid Modelling - Currently supports single-phase and two-phase models of pipe networks. User can input fluid properties of fluids currently not in library (note - user added fluids properties will not change with pressure and temperature as with fluids available by default).
+- Bill of Material Generation - Allows users to quickly generate material lists from GIS layers - can identify tees, bends and unions - able to assign fittings for point layers also.
+
+Explore some of the pages below to learn more.
+
+{% include feature_row %}
 
 ---
 
-{% include feature_row %}
+

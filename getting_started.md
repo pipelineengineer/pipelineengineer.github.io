@@ -3,16 +3,18 @@ title: Getting Started
 layout: single
 permalink: /getting_started/
 ---
-Pipeline Engineer can currently be downloaded from the [repository](https://github.com/pipelineengineer/pipelineEngineerPlugin) and placed into your QGIS plugin folder (usually C:\Users\username\AppData\Roaming\QGIS\QGIS3\profiles\default\python\plugins).
 
-Right from installation, you will have access to many different functionalities Pipeline Engineer has to offer.
-
-In order to perform hydraulic modelling with Pipeline Engineer however, you will need to install pandapipes in your QGIS Python environment.
-
-The easiest way to do this is to run the following command in the OSGeo4W Shell:
+From install, users should be able to use the network cleanup module.
+In order to gain access to the Fluid Modelling Module, users need to ensure that the [pandapipes](https://www.pandapipes.org/) library is installed in their QGIS environment. Users can install the pandapipes library by pasting the following command into the OSGeo4w Shell:-
 
 ```bash
 pip install pandapipes
 ```
-
-This will install pandapipes along with all it's dependancies.
+Depending on their version of QGIS, users may not be able to access the MTO module either. If this is the case, ensure that the [pandas](https://pandas.pydata.org/) library is installed in your QGIS environment. Similarly, users can paste the following command into the OsGeo4W shell to install this library:-
+```bash
+pip install pandas
+```
+Sometimes, the [openpyxyl](https://openpyxl.readthedocs.io/en/stable/) library will also be required for the MTO builder. 
+```bash
+pip install openpyxyl
+```

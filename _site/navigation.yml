@@ -5,8 +5,6 @@ header:
 main: 
   - title: "Home" 
     url: / 
-  - title: "About" 
-    url: /about/ 
   - title: "Getting Started" 
     url: /getting_started/
   - title: "Features" 

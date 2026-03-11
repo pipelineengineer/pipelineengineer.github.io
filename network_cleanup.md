@@ -83,10 +83,3 @@ processing.run("algorithm_id", {parameters_dictionary})
 ## 4 - Merge Selected Features Layers
 
 Merges selected features from multiple layers into one layer.
-
-### 4.1 Parameters
-
-|Label                            |Name                   |Type                     |Description                                  |
-|---------------------------------|-----------------------|-------------------------|---------------------------------------------|
-| Select Line Layers          | `LAYERS`               | [vector: line] [list]   | Layers within the pipe network being analysed. See [Network Component Creator](/admonitions/) for more details|
-|Loop Field | `ID_FIELD`      |[tablefield: any]  Default: Not set | field containing whether a layer is part of a loop (requires user to manually check identify all loops in line layer - all layers containing loops should have a non-NULL value in this column) |

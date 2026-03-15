@@ -1,6 +1,6 @@
 ---
 layout: home
-title: "Blog"
-permalink: /blog/
+title: "Examples"
+permalink: /examples/
 author_profile: true
 ---

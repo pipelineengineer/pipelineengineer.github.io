@@ -40,7 +40,7 @@ Pipeline Engineer is a [QGIS](https://qgis.org/) plugin that streamlines the des
 
 Current features include:-
 - Network Cleanup - Tools to check network topology (identify discontinuities in a line layer).
-- Fluid Modelling - Currently supports single-phase and two-phase models of pipe networks. User can input fluid properties of fluids currently not in library (note - user added fluids properties will not change with pressure and temperature as with fluids available by default).
+- Fluid Modelling - Currently supports single-phase and two-phase models of pipe networks. User can input custom fluids with static properties.
 - Bill of Material Generation - Allows users to quickly generate material lists from GIS layers - can identify tees, bends and unions - able to assign fittings for point layers also.
 
 Explore some of the pages below to learn more.

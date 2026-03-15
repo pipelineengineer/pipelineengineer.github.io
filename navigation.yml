@@ -9,8 +9,8 @@ main:
     url: /getting_started/
   - title: "Features" 
     url: /features/
-  - title: "Blog" 
-    url: /blog/ 
+  - title: "Examples" 
+    url: /examples/ 
   - title: "Contact" 
     url: /contact/
   - title: "Repository" 

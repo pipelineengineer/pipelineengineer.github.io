@@ -1,0 +1,392 @@
+
+
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.28.0 by Michael Rose
+  Copyright 2013-2026 Michael Rose - mademistakes.com | @mmistakes
+  Copyright 2024-2026 iBug - ibugone.com | @iBug
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+
+<html lang="en" class="no-js">
+  <head>
+    
+<meta charset="utf-8">
+
+
+<!-- begin _includes/seo.html --><title>Gas Distribution Example - Pipeline Engineer</title>
+<meta name="description" content="In this example we’re going to take a look at an example created from dataset from Northern Gas Networks.">
+
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Pipeline Engineer">
+<meta property="og:title" content="Gas Distribution Example">
+<meta property="og:url" content="http://localhost:4000/gas_distribution_network/">
+
+
+  <meta property="og:description" content="In this example we’re going to take a look at an example created from dataset from Northern Gas Networks.">
+
+
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2026-03-17T00:00:00+10:00">
+
+
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/gas_distribution_network/">
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Pipeline Engineer Feed">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+  
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--splash" dir="ltr">
+    
+<nav class="skip-links" aria-label="Skip links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav" aria-label="Primary navigation">
+        
+        <a class="site-title" href="/">
+          Pipeline Engineer
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a
+                href="/"
+                
+                
+              >Home</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/getting_started/"
+                
+                
+              >Getting Started</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/features/"
+                
+                
+              >Features</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/examples/"
+                
+                
+              >Examples</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/contact/"
+                
+                
+              >Contact</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="https://github.com/pipelineengineer/pipelineEngineer"
+                
+                
+              >Repository</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  <article class="splash" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Gas Distribution Example">
+    <meta itemprop="description" content="In this example we’re going to take a look at an example created from dataset from Northern Gas Networks.">
+    <meta itemprop="datePublished" content="2026-03-17T00:00:00+10:00">
+    
+
+    <section class="page__content" itemprop="text">
+      <p>In this example we’re going to take a look at an example created from <a href="https://northerngasopendataportal.co.uk/dataset/20">dataset from Northern Gas Networks</a>.</p>
+
+<p>The files used in this example can be downloaded from <a href="https://github.com/pipelineengineer/examples/tree/main/gas-network-example">here</a>.</p>
+
+<p>The connectivity of this network has been checked and rectified using a combination of the <a href="/network_cleanup/">Network Cleanup Tools</a> available from the plugin.</p>
+
+<p>Once confirmed, the model was abstracted using <a href="/fluid_modelling/#2-fluid-creation">Network Component Creator</a>.</p>
+
+<h1 id="pipeflow">Pipeflow</h1>
+
+<p>A fluid model in Pipeline Engineer is made up of a series of GIS Layers. Each layer represents a <a href="https://pandapipes.readthedocs.io/en/latest/components.html">pandapipes data structure</a>.</p>
+
+<p>Right from download, you’ll be able to drag the GeoPackage (.gpkg) file into QGIS and run a pipeflow from the Processing Toolbox.</p>
+
+<p><img src="/media/gas-network-example/gas_network_pipeflow_algorithm.png" alt="Pipeflow Algorithm" /></p>
+
+<p>The result of the pipeflow will be loaded into QGIS as a series of layers, each corresponding with one of the Network Layers intially loaded into the pipeflow.</p>
+
+<p><img src="/media/gas-network-example/gas_network_pipeflow.png" alt="Pipeflow Results" /></p>
+
+<h1 id="automation">Automation</h1>
+
+<p>At the top of the processing toolbox pane, you’ll notice a small clock icon. If you press this, you can access the pipeflow you just ran as code:-</p>
+
+<p><img src="/media/gas-network-example/pipeflow_code.png" alt="Processing History" /></p>
+
+<p>Let’s look at a way we can use this to our advantage.</p>
+
+<p>From the examples page, you’ll be able to download a csv file containing a csv file. You can add this csv file from the Add Layer tab.</p>
+
+<p><img src="/media/gas-network-example/add_csv_file.png" alt="Add the CSV File" /></p>
+
+<p>Through a script, we can access each individual layer of our network, as well as the csv file using the <a href="https://qgis.org/pyqgis/3.40/core/QgsProject.html#qgis.core.QgsProject.mapLayersByName">mapLayersByName</a> function.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sink_layer</span> <span class="o">=</span> <span class="n">QgsProject</span><span class="p">.</span><span class="n">instance</span><span class="p">().</span><span class="n">mapLayersByName</span><span class="p">(</span><span class="s">'Sink Layer'</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">grid_layer</span> <span class="o">=</span> <span class="n">QgsProject</span><span class="p">.</span><span class="n">instance</span><span class="p">().</span><span class="n">mapLayersByName</span><span class="p">(</span><span class="s">'External Grid Layer'</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">junction_layer</span> <span class="o">=</span> <span class="n">QgsProject</span><span class="p">.</span><span class="n">instance</span><span class="p">().</span><span class="n">mapLayersByName</span><span class="p">(</span><span class="s">'Junction Layer'</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">pipe_layer</span> <span class="o">=</span> <span class="n">QgsProject</span><span class="p">.</span><span class="n">instance</span><span class="p">().</span><span class="n">mapLayersByName</span><span class="p">(</span><span class="s">'Pipe Layer'</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="n">flow_rate_data</span> <span class="o">=</span> <span class="n">QgsProject</span><span class="p">.</span><span class="n">instance</span><span class="p">().</span><span class="n">mapLayersByName</span><span class="p">(</span><span class="s">'time_series'</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p>We can update the sink layer by using the Pipeline Engineer function update_flow_rates.</p>
+
+<p>We can wrap this in a for loop to run all our scenarios and load them into our QGIS session.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sink_layer</span> <span class="o">=</span> <span class="n">QgsProject</span><span class="p">.</span><span class="n">instance</span><span class="p">().</span><span class="n">mapLayersByName</span><span class="p">(</span><span class="s">'Sink Layer'</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">grid_layer</span> <span class="o">=</span> <span class="n">QgsProject</span><span class="p">.</span><span class="n">instance</span><span class="p">().</span><span class="n">mapLayersByName</span><span class="p">(</span><span class="s">'External Grid Layer'</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">junction_layer</span> <span class="o">=</span> <span class="n">QgsProject</span><span class="p">.</span><span class="n">instance</span><span class="p">().</span><span class="n">mapLayersByName</span><span class="p">(</span><span class="s">'Junction Layer'</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">pipe_layer</span> <span class="o">=</span> <span class="n">QgsProject</span><span class="p">.</span><span class="n">instance</span><span class="p">().</span><span class="n">mapLayersByName</span><span class="p">(</span><span class="s">'Pipe Layer'</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="n">flow_rate_data</span> <span class="o">=</span> <span class="n">QgsProject</span><span class="p">.</span><span class="n">instance</span><span class="p">().</span><span class="n">mapLayersByName</span><span class="p">(</span><span class="s">'time_series'</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="n">layers</span> <span class="o">=</span> <span class="p">[</span><span class="n">grid_layer</span><span class="p">,</span><span class="n">junction_layer</span><span class="p">,</span><span class="n">pipe_layer</span><span class="p">]</span>
+
+<span class="n">periods</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">period</span> <span class="ow">in</span> <span class="n">periods</span><span class="p">:</span>
+    <span class="n">period_layers</span> <span class="o">=</span> <span class="n">layers</span>
+
+    <span class="n">sink_layer_updated</span> <span class="o">=</span> <span class="n">processing</span><span class="p">.</span><span class="n">run</span><span class="p">(</span><span class="s">"pandapipes_for_qgis:update_flow_rates"</span><span class="p">,</span> 
+                                                    <span class="p">{</span><span class="s">'INPUT'</span><span class="p">:</span><span class="n">sink_layer</span><span class="p">,</span>
+                                                     <span class="s">'ID_FIELD'</span><span class="p">:</span><span class="s">'name'</span><span class="p">,</span>
+                                                     <span class="s">'FLOW_RATE_FIELD'</span><span class="p">:</span><span class="s">'mdot_kg_per_s'</span><span class="p">,</span>
+                                                     <span class="s">'FLUID'</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span> <span class="c1"># Methane
+</span>                                                     <span class="s">'AMBIENT_TEMP'</span><span class="p">:</span><span class="mf">293.15</span><span class="p">,</span>
+                                                     <span class="s">'AMBIENT_PRES'</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+                                                     <span class="s">'FLOW_RATE_DATA'</span><span class="p">:</span><span class="n">flow_rate_data</span><span class="p">,</span>
+                                                     <span class="s">'DATA_ID_FIELD'</span><span class="p">:</span><span class="s">'name'</span><span class="p">,</span>
+                                                     <span class="s">'SCENARIO_FIELD'</span><span class="p">:</span><span class="s">'period'</span><span class="p">,</span>
+                                                     <span class="s">'SCENARIO'</span><span class="p">:</span><span class="n">period</span><span class="p">,</span>
+                                                     <span class="s">'DAT_FLOW_FIELD'</span><span class="p">:</span><span class="s">'flow_rate_m_cubed_per_s'</span><span class="p">,</span>
+                                                     <span class="s">'VOLUME_UNITS'</span><span class="p">:</span><span class="mi">7</span><span class="p">,</span>
+                                                     <span class="s">'TIME_UNITS'</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span>
+                                                     <span class="s">'MASS_FLOW_RATE'</span><span class="p">:</span><span class="bp">False</span><span class="p">,</span>
+                                                     <span class="s">'OUTPUT'</span><span class="p">:</span><span class="s">'memory:'</span><span class="p">})[</span><span class="s">'OUTPUT'</span><span class="p">]</span>
+
+    <span class="n">sink_layer_updated</span><span class="p">.</span><span class="n">setName</span><span class="p">(</span><span class="sa">f</span><span class="s">'Period </span><span class="si">{</span><span class="n">period</span><span class="si">}</span><span class="s"> Sink Layer'</span><span class="p">)</span>
+
+    <span class="n">period_layers</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">sink_layer</span><span class="p">)</span>
+
+    <span class="n">processing</span><span class="p">.</span><span class="n">run</span><span class="p">(</span><span class="s">"pandapipes_for_qgis:pandapipes_pipeflow"</span><span class="p">,</span> 
+                            <span class="p">{</span><span class="s">'LAYERS'</span><span class="p">:</span><span class="n">period_layers</span><span class="p">,</span>
+                             <span class="s">'FLUID'</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span> <span class="c1"># Methane
+</span>                             <span class="s">'CALC_MODE'</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span> <span class="c1"># Hydraulics
+</span>                             <span class="s">'MAX_ITER_HYD'</span><span class="p">:</span><span class="mi">10000</span><span class="p">,</span>
+                             <span class="s">'MAX_ITER_THERM'</span><span class="p">:</span><span class="mi">10000</span><span class="p">,</span>
+                             <span class="s">'PRES_TOL'</span><span class="p">:</span><span class="mf">0.0001</span><span class="p">,</span>
+                             <span class="s">'VEL_TOL'</span><span class="p">:</span><span class="mf">0.0001</span><span class="p">,</span>
+                             <span class="s">'TEMP_TOL'</span><span class="p">:</span><span class="mf">0.0001</span><span class="p">,</span>
+                             <span class="s">'RES_TOL'</span><span class="p">:</span><span class="mf">0.001</span><span class="p">,</span>
+                             <span class="s">'AMBIENT_TEMP'</span><span class="p">:</span><span class="mf">293.15</span><span class="p">,</span>
+                             <span class="s">'FRIC_MODEL'</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="c1"># Colebrook
+</span>                             <span class="s">'ALPHA'</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> 
+                             <span class="s">'NONLINEAR_METHOD'</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span> <span class="c1"># Constant
+</span>                             <span class="s">'UPDATE_HYD_ONLY'</span><span class="p">:</span><span class="bp">False</span><span class="p">,</span>
+                             <span class="s">'CHECK_CONNECTIVITY'</span><span class="p">:</span><span class="bp">True</span><span class="p">,</span>
+                             <span class="s">'QUIT_ON_INCONSISTENCY'</span><span class="p">:</span><span class="bp">False</span><span class="p">,</span>
+                             <span class="s">'USE_NUMBA'</span><span class="p">:</span><span class="bp">True</span><span class="p">,</span>
+                             <span class="s">'LOAD_LAYERS'</span><span class="p">:</span><span class="bp">True</span><span class="p">,</span>
+                             <span class="s">'OUTPUT'</span><span class="p">:</span><span class="s">'TEMPORARY_OUTPUT'</span><span class="p">})</span>
+
+
+</code></pre></div></div>
+
+<p>Alternatively, say we don’t want to load each scenario. We can save the results of each scenario into a specified folder:-</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sink_layer</span> <span class="o">=</span> <span class="n">QgsProject</span><span class="p">.</span><span class="n">instance</span><span class="p">().</span><span class="n">mapLayersByName</span><span class="p">(</span><span class="s">'Sink Layer'</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">grid_layer</span> <span class="o">=</span> <span class="n">QgsProject</span><span class="p">.</span><span class="n">instance</span><span class="p">().</span><span class="n">mapLayersByName</span><span class="p">(</span><span class="s">'External Grid Layer'</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">junction_layer</span> <span class="o">=</span> <span class="n">QgsProject</span><span class="p">.</span><span class="n">instance</span><span class="p">().</span><span class="n">mapLayersByName</span><span class="p">(</span><span class="s">'Junction Layer'</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">pipe_layer</span> <span class="o">=</span> <span class="n">QgsProject</span><span class="p">.</span><span class="n">instance</span><span class="p">().</span><span class="n">mapLayersByName</span><span class="p">(</span><span class="s">'Pipe Layer'</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="n">flow_rate_data</span> <span class="o">=</span> <span class="n">QgsProject</span><span class="p">.</span><span class="n">instance</span><span class="p">().</span><span class="n">mapLayersByName</span><span class="p">(</span><span class="s">'time_series'</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="n">layers</span> <span class="o">=</span> <span class="p">[</span><span class="n">grid_layer</span><span class="p">,</span><span class="n">junction_layer</span><span class="p">,</span><span class="n">pipe_layer</span><span class="p">]</span>
+
+<span class="n">periods</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">period</span> <span class="ow">in</span> <span class="n">periods</span><span class="p">:</span>
+    <span class="n">period_layers</span> <span class="o">=</span> <span class="n">layers</span>
+
+    <span class="n">sink_layer_updated</span> <span class="o">=</span> <span class="n">processing</span><span class="p">.</span><span class="n">run</span><span class="p">(</span><span class="s">"pandapipes_for_qgis:update_flow_rates"</span><span class="p">,</span> 
+                                                    <span class="p">{</span><span class="s">'INPUT'</span><span class="p">:</span><span class="n">sink_layer</span><span class="p">,</span>
+                                                     <span class="s">'ID_FIELD'</span><span class="p">:</span><span class="s">'name'</span><span class="p">,</span>
+                                                     <span class="s">'FLOW_RATE_FIELD'</span><span class="p">:</span><span class="s">'mdot_kg_per_s'</span><span class="p">,</span>
+                                                     <span class="s">'FLUID'</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span> <span class="c1"># Methane
+</span>                                                     <span class="s">'AMBIENT_TEMP'</span><span class="p">:</span><span class="mf">293.15</span><span class="p">,</span>
+                                                     <span class="s">'AMBIENT_PRES'</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+                                                     <span class="s">'FLOW_RATE_DATA'</span><span class="p">:</span><span class="n">flow_rate_data</span><span class="p">,</span>
+                                                     <span class="s">'DATA_ID_FIELD'</span><span class="p">:</span><span class="s">'name'</span><span class="p">,</span>
+                                                     <span class="s">'SCENARIO_FIELD'</span><span class="p">:</span><span class="s">'period'</span><span class="p">,</span>
+                                                     <span class="s">'SCENARIO'</span><span class="p">:</span><span class="n">period</span><span class="p">,</span>
+                                                     <span class="s">'DAT_FLOW_FIELD'</span><span class="p">:</span><span class="s">'flow_rate_m_cubed_per_s'</span><span class="p">,</span>
+                                                     <span class="s">'VOLUME_UNITS'</span><span class="p">:</span><span class="mi">7</span><span class="p">,</span>
+                                                     <span class="s">'TIME_UNITS'</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span>
+                                                     <span class="s">'MASS_FLOW_RATE'</span><span class="p">:</span><span class="bp">False</span><span class="p">,</span>
+                                                     <span class="s">'OUTPUT'</span><span class="p">:</span><span class="s">'memory:'</span><span class="p">})[</span><span class="s">'OUTPUT'</span><span class="p">]</span>
+
+    <span class="n">sink_layer_updated</span><span class="p">.</span><span class="n">setName</span><span class="p">(</span><span class="sa">f</span><span class="s">'Period </span><span class="si">{</span><span class="n">period</span><span class="si">}</span><span class="s"> Sink Layer'</span><span class="p">)</span>
+
+    <span class="n">period_layers</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">sink_layer</span><span class="p">)</span>
+
+    <span class="n">path</span> <span class="o">=</span> <span class="sa">f</span><span class="s">'C:/Users/tsura/Downloads/examples-main/results/period_</span><span class="si">{</span><span class="n">period</span><span class="si">}</span><span class="s">_results.gpkg'</span>
+
+    <span class="n">processing</span><span class="p">.</span><span class="n">run</span><span class="p">(</span><span class="s">"pandapipes_for_qgis:pandapipes_pipeflow"</span><span class="p">,</span> 
+                            <span class="p">{</span><span class="s">'LAYERS'</span><span class="p">:</span><span class="n">period_layers</span><span class="p">,</span>
+                             <span class="s">'FLUID'</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span> <span class="c1"># Methane
+</span>                             <span class="s">'CALC_MODE'</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span> <span class="c1"># Hydraulics
+</span>                             <span class="s">'MAX_ITER_HYD'</span><span class="p">:</span><span class="mi">10000</span><span class="p">,</span>
+                             <span class="s">'MAX_ITER_THERM'</span><span class="p">:</span><span class="mi">10000</span><span class="p">,</span>
+                             <span class="s">'PRES_TOL'</span><span class="p">:</span><span class="mf">0.0001</span><span class="p">,</span>
+                             <span class="s">'VEL_TOL'</span><span class="p">:</span><span class="mf">0.0001</span><span class="p">,</span>
+                             <span class="s">'TEMP_TOL'</span><span class="p">:</span><span class="mf">0.0001</span><span class="p">,</span>
+                             <span class="s">'RES_TOL'</span><span class="p">:</span><span class="mf">0.001</span><span class="p">,</span>
+                             <span class="s">'AMBIENT_TEMP'</span><span class="p">:</span><span class="mf">293.15</span><span class="p">,</span>
+                             <span class="s">'FRIC_MODEL'</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="c1"># Colebrook
+</span>                             <span class="s">'ALPHA'</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> 
+                             <span class="s">'NONLINEAR_METHOD'</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span> <span class="c1"># Constant
+</span>                             <span class="s">'UPDATE_HYD_ONLY'</span><span class="p">:</span><span class="bp">False</span><span class="p">,</span>
+                             <span class="s">'CHECK_CONNECTIVITY'</span><span class="p">:</span><span class="bp">True</span><span class="p">,</span>
+                             <span class="s">'QUIT_ON_INCONSISTENCY'</span><span class="p">:</span><span class="bp">False</span><span class="p">,</span>
+                             <span class="s">'USE_NUMBA'</span><span class="p">:</span><span class="bp">True</span><span class="p">,</span>
+                             <span class="s">'LOAD_LAYERS'</span><span class="p">:</span><span class="bp">False</span><span class="p">,</span> <span class="c1">######### Set this value to false to avoid loading in layers
+</span>                             <span class="s">'OUTPUT'</span><span class="p">:</span><span class="n">path</span><span class="p">})</span>
+
+
+</code></pre></div></div>
+
+<h1 id="closing">Closing</h1>
+
+<p>In this short example, we’ve covered one of Pipeline Engineer’s greatest strengths - its visual representation of the Pandapipes Pipeflow. In future examples we’ll explore the features of Pipeline Engineer in greater depth. In the meantime, feel free to get in <a href="/contact/">contact</a> if you have any queries about the Plugin or how it might be able to help you in your workflow. Until next time, I hope you have an excellent day!</p>
+
+    </section>
+  </article>
+</div>
+
+      
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        
+
+
+<div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-square-rss" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+
+<div class="page__footer-copyright">&copy; 2026 <a href="http://localhost:4000">Pipeline Engineer</a>. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/jekyll-themes/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

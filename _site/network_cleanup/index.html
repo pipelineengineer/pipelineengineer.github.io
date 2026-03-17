@@ -112,12 +112,6 @@
               >Home</a>
             </li><li class="masthead__menu-item">
               <a
-                href="/about/"
-                
-                
-              >About</a>
-            </li><li class="masthead__menu-item">
-              <a
                 href="/getting_started/"
                 
                 
@@ -130,16 +124,22 @@
               >Features</a>
             </li><li class="masthead__menu-item">
               <a
-                href="/blog/"
+                href="/examples/"
                 
                 
-              >Blog</a>
+              >Examples</a>
             </li><li class="masthead__menu-item">
               <a
                 href="/contact/"
                 
                 
               >Contact</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="https://github.com/pipelineengineer/pipelineEngineer"
+                
+                
+              >Repository</a>
             </li></ul>
         
         <button class="greedy-nav__toggle hidden" type="button">
@@ -192,7 +192,7 @@
           <aside class="sidebar__right ">
             <nav class="toc" aria-label="Table of contents">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
-              <ul class="toc__menu"><li><a href="#1---disjoint-check">1 - Disjoint Check</a><ul><li><a href="#11-parameters">1.1 Parameters</a></li><li><a href="#12-python-code">1.2 Python Code</a></li></ul></li><li><a href="#2---recursive-selection">2 - Recursive Selection</a><ul><li><a href="#21-parameters">2.1 Parameters</a></li><li><a href="#22-python-code">2.2 Python Code</a></li></ul></li><li><a href="#3---loop-check">3 - Loop Check</a><ul><li><a href="#31-parameters">3.1 Parameters</a></li><li><a href="#32-outputs">3.2 Outputs</a></li><li><a href="#33-python-code">3.3 Python Code</a></li></ul></li><li><a href="#4---merge-selected-features-layers">4 - Merge Selected Features Layers</a><ul><li><a href="#41-parameters">4.1 Parameters</a></li></ul></li></ul>
+              <ul class="toc__menu"><li><a href="#1---disjoint-check">1 - Disjoint Check</a><ul><li><a href="#11-parameters">1.1 Parameters</a></li><li><a href="#12-python-code">1.2 Python Code</a></li></ul></li><li><a href="#2---recursive-selection">2 - Recursive Selection</a><ul><li><a href="#21-parameters">2.1 Parameters</a></li><li><a href="#22-python-code">2.2 Python Code</a></li></ul></li><li><a href="#3---loop-check">3 - Loop Check</a><ul><li><a href="#31-parameters">3.1 Parameters</a></li><li><a href="#32-outputs">3.2 Outputs</a></li><li><a href="#33-python-code">3.3 Python Code</a></li></ul></li><li><a href="#4---merge-selected-features-layers">4 - Merge Selected Features Layers</a></li></ul>
             </nav>
           </aside>
         
@@ -338,33 +338,6 @@
 <h2 id="4---merge-selected-features-layers">4 - Merge Selected Features Layers</h2>
 
 <p>Merges selected features from multiple layers into one layer.</p>
-
-<h3 id="41-parameters">4.1 Parameters</h3>
-
-<table>
-  <thead>
-    <tr>
-      <th>Label</th>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Select Line Layers</td>
-      <td><code class="language-plaintext highlighter-rouge">LAYERS</code></td>
-      <td>[vector: line] [list]</td>
-      <td>Layers within the pipe network being analysed. See <a href="/admonitions/">Network Component Creator</a> for more details</td>
-    </tr>
-    <tr>
-      <td>Loop Field</td>
-      <td><code class="language-plaintext highlighter-rouge">ID_FIELD</code></td>
-      <td>[tablefield: any]  Default: Not set</td>
-      <td>field containing whether a layer is part of a loop (requires user to manually check identify all loops in line layer - all layers containing loops should have a non-NULL value in this column)</td>
-    </tr>
-  </tbody>
-</table>
 
         
       </section>

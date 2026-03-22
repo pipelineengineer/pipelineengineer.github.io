@@ -6,9 +6,9 @@ toc: true
 
 ---
 
-In this example we're going to take a look at an example created from [dataset from Northern Gas Networks](https://northerngasopendataportal.co.uk/dataset/20). 
+Today, we're going to take a look at an example created from [dataset from Northern Gas Networks](https://northerngasopendataportal.co.uk/dataset/20). 
 
-The files used in this example can be downloaded from [here](https://github.com/pipelineengineer/examples/tree/main/gas-network-example).
+The files used can be downloaded from [here](https://github.com/pipelineengineer/examples/tree/main/gas-network-example).
 
 The connectivity of this network has been checked and rectified using a combination of the [Network Cleanup Tools](/network_cleanup/) available from the plugin.
 

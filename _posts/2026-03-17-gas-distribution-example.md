@@ -150,7 +150,7 @@ for period in periods:
 
     sink_layer_updated.setName(f'Period {period} Sink Layer')
 
-    period_layers.append(sink_layer)
+    period_layers.append(sink_layer_updated)
 
     path = f'C:/Users/tsura/Downloads/examples-main/results/period_{period}_results.gpkg'
 

@@ -22,9 +22,10 @@ Identifies all bends per corridor in a given network layer.
 |ID Expression                   |`ID_EXPRESSION`        | 	[expression] Default: "CONCAT('BEND_',LPAD($id,5,'00000'))"| ID expression for each bend.            |
 
 ### 1.2 Outputs
-| Label                          | Name                  | Type                    | Description                                                                  |
-| -------------------------------|-----------------------|-------------------------|------------------------------------------------------------------------------|
-|Bends                            | `OUTPUT`              |[vector: point]         | Returns a point layer containing all identified bends along with their angle |
+
+| Label                          | Name                  | Type                                    | Description                                                 |
+| -------------------------------|-----------------------|-----------------------------------------|                                                             |
+|Bends                           | `OUTPUT`              |[vector: point]          | Returns a point layer containing all identified bends along with their angle|
 
 ### 1.3 Python Code
 
@@ -48,9 +49,10 @@ Identifies all tee junctions in a given network layer.
 |ID Expression                   |`ID_EXPRESSION`        | 	[expression] Default: "CONCAT('JUNCTION_',LPAD($id,5,'00000'))"| ID expression for each junction.    |
 
 ### 2.2 Outputs
-| Label                          | Name                  | Type                    | Description                                                                  |
-| -------------------------------|-----------------------|-------------------------|------------------------------------------------------------------------------|
-|Tees                            | `OUTPUT`              |[vector: point]         | Returns a point layer containing all identified Tee Junctions                 |
+
+| Label                          | Name                  | Type                                    | Description                                                   |
+| -------------------------------|-----------------------|-----------------------------------------|                                                               |
+|Tees                            | `OUTPUT`              |[vector: point]                          | Returns a point layer containing all identified Tee Junctions |
 
 ### 2.3 Python Code
 
@@ -74,9 +76,11 @@ Identifies all four way junctions in a given network layer.
 |ID Expression                   |`ID_EXPRESSION`        | 	[expression] Default: "CONCAT('JUNCTION_',LPAD($id,5,'00000'))"| ID expression for each junction.    |
 
 ### 3.2 Outputs
-| Label                          | Name                  | Type                    | Description                                                                  |
-| -------------------------------|-----------------------|-------------------------|------------------------------------------------------------------------------|
-|Tees                            | `OUTPUT`              |[vector: point]         | Returns a point layer containing all identified four way junctions            |
+
+
+| Label                          | Name                  | Type                                    | Description                                                         |
+| -------------------------------|-----------------------|-----------------------------------------|                                                                     |
+|Unions                          | `OUTPUT`              |[vector: point]                          | Returns a point layer containing all identified four way junctions  |
 
 ### 3.3 Python Code
 

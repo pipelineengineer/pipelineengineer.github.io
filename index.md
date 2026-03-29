@@ -28,9 +28,9 @@ feature_row:
   - image_path: /media/images/interface.png
     alt: "MTO Builder"
     title: "MTO Builder"
-    excerpt: "Produce high quality Bills of Materials from kilometres of pipe all the way down to every nut and bolt."
+    excerpt: "Summarise network features within a pipe layer."
     url: "/mto_builder/"
-    btn_label: "Read Docs"
+    btn_label: "Learn More"
     btn_class: "btn--primary"
 
 ---
@@ -41,7 +41,7 @@ Pipeline Engineer is a [QGIS](https://qgis.org/) plugin that streamlines the des
 Current features include:-
 - Network Cleanup - Tools to check network topology (identify discontinuities in a line layer).
 - Fluid Modelling - Currently supports single-phase and two-phase models of pipe networks. User can input custom fluids with static properties.
-- Bill of Material Generation - Allows users to quickly generate material lists from GIS layers - can identify tees, bends and unions - able to assign fittings for point layers also.
+- Bill of Material Generation - Identify tees, bends and unions from line layers.
 
 Explore some of the pages below to learn more.
 

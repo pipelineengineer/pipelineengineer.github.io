@@ -1,39 +1,88 @@
 ---
-title: MTO Builder
+title: Material Takeoff
 layout: single
 permalink: /mto_builder/
 toc: true
 
 ---
 
-The MTO Builder can be accessed from either the Toolbar or the Plugin Menu.
+A collection of tools to quickly abstract network features such as bends, tees and unions to aid procurement.
 
-![MTO Toolbar](media/mto_builder_toolbar.png)
+## 1 Bends
 
-The following sections will detail how the MTO Builder works.
+Identifies all bends per corridor in a given network layer.
 
-# 1 Pipelines and Features
+### 1.1 Parameters
 
-![MTO Pipelines and Features](media/mto_builder_pipeline_features.png)
+| Label                          | Name                  | Type                                    | Description                                                 |
+| -------------------------------|-----------------------|-----------------------------------------|                                                             |
+|Input layer                     | `INPUT`               |[vector: line]                           | Line layer user wishes to identify bends on                 |
+|ID Field                        | `ID_FIELD`            |[tablefield: any] Default: Not set       | Field containing unique identifiers on line layer           |
+|Minimum Bend Angle (degrees)    |`MIN_ANGLE`            |[numeric: double] Default: 30            | Bends with angles smaller than this value will be discarded |
+|ID Expression                   |`ID_EXPRESSION`        | 	[expression] Default: "CONCAT('BEND_',LPAD($id,5,'00000'))"| ID expression for each bend.            |
 
-The purpose of the Pipelines and Features tab is to help identify each point where fittings in the network will be needed. Summaries for line layers representing Pipelines can be obtained easily.
+### 1.2 Outputs
+| Label                          | Name                  | Type                    | Description                                                                  |
+| -------------------------------|-----------------------|-------------------------|------------------------------------------------------------------------------|
+|Bends                            | `OUTPUT`              |[vector: point]         | Returns a point layer containing all identified bends along with their angle |
 
-Sizes, classes and lengths can be extracted either directly from an existing field of an attribute table, or using a function.
+### 1.3 Python Code
 
-Following this, point layers representing pipeline features (e.g. valves, end caps, etc.) can be summarised along with the corresponding corridor from the selected line layer.
+```py
 
-The Feature ID and Assembly type again, can be taken either directly from the attribute table, or through an expression.
+import processing
 
-When checked, the Include Bends, Tees and Unions tab will add Bends, Tees and Four-way Unions to the feature layer. Once the useer has checked the feature summary and is happy with the corridors assigned, line attributes (i.e. size and class) can be added to each pipeline feature.
+processing.run("algorithm_id", {parameters_dictionary})
 
-# 2 MTO Builder
+```
 
-![MTO Builder UI](media/mto_builder_ui.png)
+## 2 Tees
+Identifies all tee junctions in a given network layer.
 
-THe MTO Builder contains a corridor summariser. The corridor summariser creates a list of each corridor and what pipelines will be installed in each one, along with their length, size and class.
+### 2.1 Parameters
 
-The Fitting Lists area works by combining an assembly list located in an excel file inside the Pipeline Engineer Plugin. Users can navigate to a locally saved or modified verison of this workbook.
+| Label                          | Name                  | Type                                    | Description                                                 |
+| -------------------------------|-----------------------|-----------------------------------------|                                                             |
+|Input layer                     | `INPUT`               |[vector: line]                           | Line layer user wishes to identify junctions on             |
+|ID Field                        | `ID_FIELD`            |[tablefield: any] Default: Not set       | Field containing unique identifiers on line layer           |
+|ID Expression                   |`ID_EXPRESSION`        | 	[expression] Default: "CONCAT('JUNCTION_',LPAD($id,5,'00000'))"| ID expression for each junction.    |
 
-The Fittings Summary Layer uses the assembly list to pull each fitting and the relevant size from the Pipeline Feature Layer. Users can add their own assemblies to the assembly list as needed.
+### 2.2 Outputs
+| Label                          | Name                  | Type                    | Description                                                                  |
+| -------------------------------|-----------------------|-------------------------|------------------------------------------------------------------------------|
+|Tees                            | `OUTPUT`              |[vector: point]         | Returns a point layer containing all identified Tee Junctions                 |
 
-Additional Fittings can be captured either as an entry on this list or on a seperate list made from pressing the create additional fittings list. This is so that if a project goes through multiple iterations, Additional Fittings not on the assembly list can be accounted for if the fittings summary layer needs to be regenerated.
+### 2.3 Python Code
+
+```py
+
+import processing
+
+processing.run("algorithm_id", {parameters_dictionary})
+
+```
+
+## 3 Four Way Unions
+Identifies all four way junctions in a given network layer.
+
+### 3.1 Parameters
+
+| Label                          | Name                  | Type                                    | Description                                                 |
+| -------------------------------|-----------------------|-----------------------------------------|                                                             |
+|Input layer                     | `INPUT`               |[vector: line]                           | Line layer user wishes to identify junctions on             |
+|ID Field                        | `ID_FIELD`            |[tablefield: any] Default: Not set       | Field containing unique identifiers on line layer           |
+|ID Expression                   |`ID_EXPRESSION`        | 	[expression] Default: "CONCAT('JUNCTION_',LPAD($id,5,'00000'))"| ID expression for each junction.    |
+
+### 3.2 Outputs
+| Label                          | Name                  | Type                    | Description                                                                  |
+| -------------------------------|-----------------------|-------------------------|------------------------------------------------------------------------------|
+|Tees                            | `OUTPUT`              |[vector: point]         | Returns a point layer containing all identified four way junctions            |
+
+### 3.3 Python Code
+
+```py
+
+import processing
+
+processing.run("algorithm_id", {parameters_dictionary})
+

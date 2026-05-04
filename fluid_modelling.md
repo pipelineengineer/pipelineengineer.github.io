@@ -111,10 +111,9 @@ import processing
 processing.run("algorithm_id", {parameters_dictionary})
 
 ```
+# 3.3 Two-Phase Flow
 
-# 3.3 Run Pipeflow (Beggs Brill)
-
-Runs a regular pandapipes pipeflow over a specified fluid to obtain flow distribution. Will then reverse all lines that are flowing in the opposite direction of the line geometry. Beggs and Brill correlation will be calculated from grid connections until the pressure drop along every section of pipe containing service has been calculated.
+Runs a regular pandapipes pipeflow over a specified fluid to obtain flow distribution. Will then reverse all lines that are flowing in the opposite direction of the line geometry. A pressure-drop correlation is used to back-calculate the pressure from the grids outwards.
 
 NOTE:- At this moment, two-phase flow modules only work in cases where flow is towards pressure boundaries - this will be rectified to include all flow directions in the near future.
 
@@ -123,11 +122,16 @@ NOTE:- At this moment, two-phase flow modules only work in cases where flow is t
 | Label                          | Name                   | Type                   | Description            |
 | ------------------------------ |----------------------- |----------------------- |----------------------- |
 | Select Network Layers          | `LAYERS`               | [vector: any] [list]   | Layers within the pipe network being analysed. See [Network Component Creator](/admonitions/) for more details|
-| Select Fluid                   | `PIPEFLOW_FLUID`       |[enumeration] Default: 0| Fluid Pipeflow will be carried out using:- <br> 0 - hgas <br>1 - lgas <br>2 - hydrogen  <br>3 - methane <br>4 - water <br>5 - biomethane_pure <br>6 - biomethane_treated <br>7 - air|
+| Select Primary Fluid (Used to Calculate Flow Distribution)| `PIPEFLOW_FLUID`       |[enumeration] Default: 0| Fluid Pipeflow will be carried out using:- <br> 0 - hgas <br>1 - lgas <br>2 - hydrogen  <br>3 - methane <br>4 - water <br>5 - biomethane_pure <br>6 - biomethane_treated <br>7 - air|
 | Select Liquid Phase            | `LIQUID`               |[enumeration] Default: 0| Liquid Phase of fluid:- <br> 0 - water|
 | Select Gas Phase               | `GAS`                  |[enumeration] Default: 0| Fluid Pipeflow will be carried out using:- <br> 0 - hgas <br>1 - lgas <br>2 - hydrogen  <br>3 - methane <br>4 - biomethane_pure <br>5 - biomethane_treated <br>6 - air|
 | Gas Fraction                   |`GAS_FRACTION`          |[numeric: double] Default: 0.5| Fraction of total flow rate that is a gaseous phase|
-| Surface Tension                |`SURF_TENS`             |[enumeration] Default: 0.072  | Surface tension of liquid phase (N/m)|
+| Surface Tension                |`SURF_TENS`             |[numeric: double] Default: 0.072  | Surface tension of liquid phase (N/m)|
+| Select Flow Model              |`FLOW_MODEL`            |[enumeration] Default: 2  | Pressure correlation used to back-calculate pressure:-  <br> 0 - Single-Phase (For Liquid Phase) <br>1 - Beggs Brill <br>2 - Gas Breakout at Vapour Pressure |
+| Average Mixture Pressure (Used for Calculating Phase Properties)|`FLUID_PRES`             |[numeric: double] Default: 1  | Pressure used to retrieve fluid properities|
+| Return Network Skeleton?       |`RETURN_NETWORK`        |[boolean] Default: True         |Returns the flow distribution layer with lines facing flow directions as well as the sampled xyz layer|
+| Chainage                       |`CHAINAGE`              |[numeric: double] Default: 20   |The intervals between each point in the XYZ layer|
+| Select DEM Layer               |`DEM`                   |[raster]                        |The Digital Elevation Model (DEM) Layer where heights will be sampled from|
 | Maximum Iterations (Hydraulic) |`MAX_ITER_HYD`          |[numeric: double] Default: 10000|Refer to [Pipeflow Options](https://pandapipes.readthedocs.io/en/latest/pipeflow/options.html)|
 | Maximum Iterations (Thermal)   |`MAX_ITER_THERM`        |[numeric: double] Default: 10000|Refer to [Pipeflow Options](https://pandapipes.readthedocs.io/en/latest/pipeflow/options.html)|
 | Pressure Error Tolerance       |`PRES_TOL`              |[numeric: double] Default: 0.0001|Refer to [Pipeflow Options](https://pandapipes.readthedocs.io/en/latest/pipeflow/options.html)|
@@ -151,53 +155,6 @@ Load Layers?      | `LOAD_LAYERS`          |[boolean] Default: True | When check
 Output Geopackage | `OUTPUT`               |[file] Default: [Save to temporary file]| Will save result layers to specified output (will save to temporary file by default)|
 
 ## 3.3.3 Python Code
-
-```py
-
-import processing
-
-processing.run("algorithm_id", {parameters_dictionary})
-
-```
-# 3.4 Run Pipeflow (Homogenous Model)
-
-Runs a regular pandapipes pipeflow over a specified fluid to obtain flow distribution. Will then reverse all lines that are flowing in the opposite direction of the line geometry. A homogenous two-phase model (i.e. constant gas & liquid velocity) is used to back-calculate the pressure from the grids outwards.
-
-NOTE:- At this moment, two-phase flow modules only work in cases where flow is towards pressure boundaries - this will be rectified to include all flow directions in the near future.
-
-## 3.4.1 Parameters
-
-| Label                          | Name                   | Type                   | Description            |
-| ------------------------------ |----------------------- |----------------------- |----------------------- |
-| Select Network Layers          | `LAYERS`               | [vector: any] [list]   | Layers within the pipe network being analysed. See [Network Component Creator](/admonitions/) for more details|
-| Select Fluid                   | `PIPEFLOW_FLUID`       |[enumeration] Default: 0| Fluid Pipeflow will be carried out using:- <br> 0 - hgas <br>1 - lgas <br>2 - hydrogen  <br>3 - methane <br>4 - water <br>5 - biomethane_pure <br>6 - biomethane_treated <br>7 - air|
-| Select Liquid Phase            | `LIQUID`               |[enumeration] Default: 0| Liquid Phase of fluid:- <br> 0 - water|
-| Select Gas Phase               | `GAS`                  |[enumeration] Default: 0| Fluid Pipeflow will be carried out using:- <br> 0 - hgas <br>1 - lgas <br>2 - hydrogen  <br>3 - methane <br>4 - biomethane_pure <br>5 - biomethane_treated <br>6 - air|
-| Gas Fraction                   |`GAS_FRACTION`          |[numeric: double] Default: 0.5| Fraction of total flow rate that is a gaseous phase|
-| Surface Tension                |`SURF_TENS`             |[enumeration] Default: 0.072  | Surface tension of liquid phase (N/m)|
-| Maximum Iterations (Hydraulic) |`MAX_ITER_HYD`          |[numeric: double] Default: 10000|Refer to [Pipeflow Options](https://pandapipes.readthedocs.io/en/latest/pipeflow/options.html)|
-| Maximum Iterations (Thermal)   |`MAX_ITER_THERM`        |[numeric: double] Default: 10000|Refer to [Pipeflow Options](https://pandapipes.readthedocs.io/en/latest/pipeflow/options.html)|
-| Pressure Error Tolerance       |`PRES_TOL`              |[numeric: double] Default: 0.0001|Refer to [Pipeflow Options](https://pandapipes.readthedocs.io/en/latest/pipeflow/options.html)|
-| Velocity Error Tolerance       |`VEL_TOL`               |[numeric: double] Default: 0.0001|Refer to [Pipeflow Options](https://pandapipes.readthedocs.io/en/latest/pipeflow/options.html)|
-| Temperature Error Tolerance    |`TEMP_TOL`              |[numeric: double] Default: 0.0001|Refer to [Pipeflow Options](https://pandapipes.readthedocs.io/en/latest/pipeflow/options.html)|
-| Residual Tolerance             |`RES_TOL`               |[numeric: double] Default: 0.001|Refer to [Pipeflow Options](https://pandapipes.readthedocs.io/en/latest/pipeflow/options.html)|
-| Ambient Temperature            |`AMBIENT_TEMP`          |[numeric: double] Default: 293.15|Refer to [Pipeflow Options](https://pandapipes.readthedocs.io/en/latest/pipeflow/options.html)|
-| Friction Model                 |`FRIC_MODEL`            |[enumeration] Default: 1|Refer to [Pipeflow Options](https://pandapipes.readthedocs.io/en/latest/pipeflow/options.html)|
-| Alpha                          |`ALPHA`                 |[numeric: double] Default: 1|Refer to [Pipeflow Options](https://pandapipes.readthedocs.io/en/latest/pipeflow/options.html) |
-| Nonlinear Method               |`NONLINEAR_METHOD`      |[enumeration] Default: 0|Refer to [Pipeflow Options](https://pandapipes.readthedocs.io/en/latest/pipeflow/options.html)|
-| Update Hydraulic Matrix Only?  |`UPDATE_HYD_ONLY`       |[boolean] Default: False|Refer to [Pipeflow Options](https://pandapipes.readthedocs.io/en/latest/pipeflow/options.html)|
-| Check Connectivity?            |`CHECK_CONNECTIVITY`    |[boolean] Default: True |Refer to [Pipeflow Options](https://pandapipes.readthedocs.io/en/latest/pipeflow/options.html)|
-| Quit on Inconsistency?         |`QUIT_ON_INCONSISTENCY` |[boolean] Default: False|Refer to [Pipeflow Options](https://pandapipes.readthedocs.io/en/latest/pipeflow/options.html)|
-| Use Numba?                     |`USE_NUMBA`             |[boolean] Default: True |Refer to [Pipeflow Options](https://pandapipes.readthedocs.io/en/latest/pipeflow/options.html)|
-
-## 3.4.2 Outputs
-
-| Label           | Name                   | Type                   | Description            |
-| ----------------|----------------------- |----------------------- |----------------------- |
-Load Layers?      | `LOAD_LAYERS`          |[boolean] Default: True | When checked, will load result files to a temporary layer|
-Output Geopackage | `OUTPUT`               |[file] Default: [Save to temporary file]| Will save result layers to specified output (will save to temporary file by default)|
-
-## 3.4.3 Python Code
 
 ```py
 

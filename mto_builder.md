@@ -6,7 +6,23 @@ toc: true
 
 ---
 
-A collection of tools to quickly abstract network features such as bends, tees and unions to aid procurement.
+
+
+# Assembly Manager
+
+The Assembly Manager can be found by clicking the flange icon on the toolbar.
+
+![Assembly Manager on Toolbar](/media/assembly_manager_toolbar.png)
+
+The Assembly Manager is largely controlled from an Excel workbook that is saved inside the plugin by default. The workbook contains three sheets; an Assembly List, a Filter List and a Parameter List.
+
+![Assembly Manager](/media/assembly_manager.png)
+
+A list of fittings is made by combining a selected point layer with the Assembly List and filtering out any fittings that meet the criteria listed in the Filter List sheet (default examples include reducers that have the same size or SDR transitions that have the same SDR).
+
+![Assembly Manager Results](/media/fittings_results.png)
+
+# Algorithms
 
 ## 1 Bends
 
@@ -83,6 +99,35 @@ Identifies all four way junctions in a given network layer.
 |Unions                          | `OUTPUT`              |[vector: point]                          | Returns a point layer containing all identified four way junctions  |
 
 ### 3.3 Python Code
+
+```py
+
+import processing
+
+processing.run("algorithm_id", {parameters_dictionary})
+```
+
+## 4 Add Attributes to Layer
+Pulls data from one layer and attaches it to another - useful for populating tees, bends and four way union layers with associated line sizing.
+
+### 4.1 Parameters
+
+| Label                          | Name                  | Type                                    | Description                                                       |
+| -------------------------------|-----------------------|-----------------------------------------|                                                                   |
+|Layer with Attributes           | `ATTRIBUTES_LAYER`    |[vector: any]                            | Layer containing fields with attributes.                          |
+|Attribute Layer ID Field        | `ATTRIBUTE_ID_FIELD`  |[tablefield: any] Default: Not set       | Field that with value in selected fields on second layer.         |
+|Attribute Fields to Copy        |`FIELDS_TO_COPY`       | 	[tablefield: any] [list]               | Fields to add to second layer.                                    |
+|Layer to Add Attributes To      |`ATTRIBUTED_LAYER`     | 	[vector: any]                          | ID expression for each junction.                                  |
+|Fields Containing Attributes    |`ATTRIBUTE_FIELDS`     | 	[tablefield: any] [list]               | Fields that will be matched up to ID field from original layer    |
+
+### 4.2 Outputs
+
+
+| Label                          | Name                  | Type                                    | Description                                                         |
+| -------------------------------|-----------------------|-----------------------------------------|                                                                     |
+|Layer With Attributes Added     | `OUTPUT`              |[vector: any]                            | Returns a layer with all values copied over                         |
+
+### 4.3 Python Code
 
 ```py
 

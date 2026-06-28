@@ -192,11 +192,25 @@
           <aside class="sidebar__right ">
             <nav class="toc" aria-label="Table of contents">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
-              <ul class="toc__menu"><li><a href="#1-bends">1 Bends</a><ul><li><a href="#11-parameters">1.1 Parameters</a></li><li><a href="#12-outputs">1.2 Outputs</a></li><li><a href="#13-python-code">1.3 Python Code</a></li></ul></li><li><a href="#2-tees">2 Tees</a><ul><li><a href="#21-parameters">2.1 Parameters</a></li><li><a href="#22-outputs">2.2 Outputs</a></li><li><a href="#23-python-code">2.3 Python Code</a></li></ul></li><li><a href="#3-four-way-unions">3 Four Way Unions</a><ul><li><a href="#31-parameters">3.1 Parameters</a></li><li><a href="#32-outputs">3.2 Outputs</a></li><li><a href="#33-python-code">3.3 Python Code</a></li></ul></li></ul>
+              <ul class="toc__menu"><li><a href="#assembly-manager">Assembly Manager</a></li><li><a href="#algorithms">Algorithms</a><ul><li><a href="#1-bends">1 Bends</a><ul><li><a href="#11-parameters">1.1 Parameters</a></li><li><a href="#12-outputs">1.2 Outputs</a></li><li><a href="#13-python-code">1.3 Python Code</a></li></ul></li><li><a href="#2-tees">2 Tees</a><ul><li><a href="#21-parameters">2.1 Parameters</a></li><li><a href="#22-outputs">2.2 Outputs</a></li><li><a href="#23-python-code">2.3 Python Code</a></li></ul></li><li><a href="#3-four-way-unions">3 Four Way Unions</a><ul><li><a href="#31-parameters">3.1 Parameters</a></li><li><a href="#32-outputs">3.2 Outputs</a></li><li><a href="#33-python-code">3.3 Python Code</a></li></ul></li><li><a href="#4-add-attributes-to-layer">4 Add Attributes to Layer</a><ul><li><a href="#41-parameters">4.1 Parameters</a></li><li><a href="#42-outputs">4.2 Outputs</a></li><li><a href="#43-python-code">4.3 Python Code</a></li></ul></li></ul></li></ul>
             </nav>
           </aside>
         
-        <p>A collection of tools to quickly abstract network features such as bends, tees and unions to aid procurement.</p>
+        <h1 id="assembly-manager">Assembly Manager</h1>
+
+<p>The Assembly Manager can be found by clicking the flange icon on the toolbar.</p>
+
+<p><img src="/media/assembly_manager_toolbar.png" alt="Assembly Manager on Toolbar" /></p>
+
+<p>The Assembly Manager is largely controlled from an Excel workbook that is saved inside the plugin by default. The workbook contains three sheets; an Assembly List, a Filter List and a Parameter List.</p>
+
+<p><img src="/media/assembly_manager.png" alt="Assembly Manager" /></p>
+
+<p>A list of fittings is made by combining a selected point layer with the Assembly List and filtering out any fittings that meet the criteria listed in the Filter List sheet (default examples include reducers that have the same size or SDR transitions that have the same SDR).</p>
+
+<p><img src="/media/fittings_results.png" alt="Assembly Manager Results" /></p>
+
+<h1 id="algorithms">Algorithms</h1>
 
 <h2 id="1-bends">1 Bends</h2>
 
@@ -395,6 +409,83 @@
 </table>
 
 <h3 id="33-python-code">3.3 Python Code</h3>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="kn">import</span> <span class="nn">processing</span>
+
+<span class="n">processing</span><span class="p">.</span><span class="n">run</span><span class="p">(</span><span class="s">"algorithm_id"</span><span class="p">,</span> <span class="p">{</span><span class="n">parameters_dictionary</span><span class="p">})</span>
+</code></pre></div></div>
+
+<h2 id="4-add-attributes-to-layer">4 Add Attributes to Layer</h2>
+<p>Pulls data from one layer and attaches it to another - useful for populating tees, bends and four way union layers with associated line sizing.</p>
+
+<h3 id="41-parameters">4.1 Parameters</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Label</th>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Layer with Attributes</td>
+      <td><code class="language-plaintext highlighter-rouge">ATTRIBUTES_LAYER</code></td>
+      <td>[vector: any]</td>
+      <td>Layer containing fields with attributes.</td>
+    </tr>
+    <tr>
+      <td>Attribute Layer ID Field</td>
+      <td><code class="language-plaintext highlighter-rouge">ATTRIBUTE_ID_FIELD</code></td>
+      <td>[tablefield: any] Default: Not set</td>
+      <td>Field that with value in selected fields on second layer.</td>
+    </tr>
+    <tr>
+      <td>Attribute Fields to Copy</td>
+      <td><code class="language-plaintext highlighter-rouge">FIELDS_TO_COPY</code></td>
+      <td>[tablefield: any] [list]</td>
+      <td>Fields to add to second layer.</td>
+    </tr>
+    <tr>
+      <td>Layer to Add Attributes To</td>
+      <td><code class="language-plaintext highlighter-rouge">ATTRIBUTED_LAYER</code></td>
+      <td>[vector: any]</td>
+      <td>ID expression for each junction.</td>
+    </tr>
+    <tr>
+      <td>Fields Containing Attributes</td>
+      <td><code class="language-plaintext highlighter-rouge">ATTRIBUTE_FIELDS</code></td>
+      <td>[tablefield: any] [list]</td>
+      <td>Fields that will be matched up to ID field from original layer</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="42-outputs">4.2 Outputs</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Label</th>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Layer With Attributes Added</td>
+      <td><code class="language-plaintext highlighter-rouge">OUTPUT</code></td>
+      <td>[vector: any]</td>
+      <td>Returns a layer with all values copied over</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="43-python-code">4.3 Python Code</h3>
 
 <div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
 <span class="kn">import</span> <span class="nn">processing</span>

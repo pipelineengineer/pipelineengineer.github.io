@@ -122,7 +122,7 @@ Runs a pandapipes pipeflow of a specified fluid to obtain flow distribution thro
 | Select Network Layers          | `LAYERS`               | [vector: any] [list]   | Layers within the pipe network being analysed. See '1 Component Creation' for more details|
 | Select Liquid Phase                                                   | `LIQUID`               |[enumeration] Default: 0| Will include water by default. Users can add fluids with custom properties in the fluids browser (2 - Fluid Creation)|
 | Liquid Vapour Pressure                                                |`VAPOUR_PRES`           |[numeric: double] Default: 0.0563|Vapour Pressure of Liquid in bar (Pressure will not fall below this number)|
-| Pressure Multiplier (Multiplies Calculated Pressure Loss by a Factor) |`PRES_MULTIPLIER`       |[numeric: double] Default: 1     |Multiplies Pressure Losses by this number|
+| Friction Multiplier                                                   |`PRES_MULTIPLIER`       |[numeric: double] Default: 1     |Multiplies Frictional Losses by this number|
 | Average Mixture Pressure (Used for Calculating Phase Properties)      |`FLUID_PRES`            |[numeric: double] Default: 1     | Pressure used to retrieve fluid properities|
 | Return Network Skeleton?                                              |`RETURN_NETWORK`        |[boolean] Default: True          |Returns the flow distribution layer with lines facing flow directions as well as the sampled xyz layer|
 | Chainage                                                              |`CHAINAGE`              |[numeric: double] Default: 20    |The intervals between each point in the XYZ layer|
